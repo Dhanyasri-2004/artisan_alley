@@ -1,0 +1,355 @@
+.admin-artisan-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f4f7fa;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  animation: fadeIn 1.5s ease; /* Added slow animation */
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #34495e;
+  color: white;
+  padding: 20px;
+  overflow-y: auto;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  animation: slideInLeft 1.2s ease; /* Added slow animation */
+}
+
+/* Content Area */
+.admin-artisan-content {
+  margin-left: 250px;
+  padding: 32px;
+  width: calc(100% - 250px);
+  height: calc(100vh - 64px); /* Adjusted to fit content + padding */
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  flex-grow: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  animation: fadeIn 1.8s ease; /* Added slow animation */
+}
+
+/* Title */
+.admin-artisan-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 24px;
+  position: relative;
+  padding-bottom: 12px;
+  animation: slideInDown 1.5s ease; /* Added slow animation */
+}
+
+.admin-artisan-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: #a277ba;
+  border-radius: 2px;
+  animation: expandWidth 2s ease-out forwards; /* Added slow animation */
+}
+
+/* Controls Section */
+.admin-artisan-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+  animation: fadeIn 2s ease; /* Added slow animation */
+}
+
+.admin-search-box {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 0 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  flex: 1;
+  max-width: 400px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.5s ease; /* Added slow transition */
+}
+
+.admin-search-box:focus-within {
+  box-shadow: 0 0 0 2px rgba(162, 119, 186, 0.3);
+}
+
+.admin-search-box input {
+  border: none;
+  padding: 12px;
+  font-size: 15px;
+  width: 100%;
+  outline: none;
+  background: transparent;
+}
+
+.search-icon {
+  color: #94a3b8;
+}
+
+.admin-stats {
+  display: flex;
+  gap: 16px;
+  animation: fadeInUp 2.2s ease; /* Added slow animation */
+}
+
+.admin-stat-card {
+  background: white;
+  border-radius: 8px;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-left: 3px solid #a277ba;
+  transition: transform 0.8s ease; /* Added slow transition */
+}
+
+.admin-stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.admin-stat-card svg {
+  color: #a277ba;
+}
+
+.admin-stat-card span {
+  font-weight: 700;
+  font-size: 18px;
+  color: #2c3e50;
+}
+
+.admin-stat-card p {
+  color: #64748b;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Table Styling */
+.admin-artisan-table-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  animation: fadeInUp 2.5s ease; /* Added slow animation */
+}
+
+.admin-artisan-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.admin-artisan-table th {
+  background-color: #f8fafc;
+  padding: 16px;
+  text-align: left;
+  font-weight: 600;
+  color: #64748b;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.admin-artisan-table td {
+  padding: 16px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+  font-size: 15px;
+  transition: all 0.6s ease; /* Added slow transition */
+}
+
+.admin-artisan-row {
+  transition: background-color 0.7s ease; /* Made transition slower */
+}
+
+.admin-artisan-row:hover {
+  background-color: #f8fafc;
+}
+
+.admin-artisan-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #a277ba;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 16px;
+  transition: transform 0.8s ease; /* Added slow transition */
+}
+
+.admin-artisan-row:hover .admin-artisan-avatar {
+  transform: scale(1.1);
+}
+
+.admin-artisan-name {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.admin-artisan-skill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f1f5f9;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 14px;
+  width: fit-content;
+  transition: background-color 0.6s ease; /* Added slow transition */
+}
+
+.admin-artisan-row:hover .admin-artisan-skill {
+  background-color: #e8dfee;
+}
+
+.admin-artisan-skill svg {
+  color: #a277ba;
+}
+
+/* Loading State */
+.admin-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 0;
+  color: #64748b;
+  animation: fadeIn 1.5s ease; /* Added slow animation */
+}
+
+.admin-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(162, 119, 186, 0.2);
+  border-radius: 50%;
+  border-top-color: #a277ba;
+  animation: spin 2s linear infinite; /* Made animation slower */
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* No Results State */
+.admin-no-results {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 48px;
+  text-align: center;
+  color: #64748b;
+  animation: fadeIn 2s ease; /* Added slow animation */
+}
+
+.admin-no-results svg {
+  color: #94a3b8;
+  margin-bottom: 16px;
+}
+
+.admin-no-results h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 8px;
+}
+
+/* Added keyframe animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes expandWidth {
+  from {
+    width: 0;
+  }
+  to {
+    width: 60px;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .admin-artisan-content {
+    padding: 20px;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .admin-artisan-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-search-box {
+    max-width: 100%;
+  }
+
+  .admin-artisan-table-container {
+    overflow-x: auto;
+  }
+
+  .admin-artisan-table {
+    min-width: 600px;
+  }
+}

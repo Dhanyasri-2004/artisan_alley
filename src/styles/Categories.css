@@ -1,0 +1,397 @@
+/* Categories Page Styling */
+:root {
+    --category-blue:#a277ba;
+    --category-purple: #8b5cf6;
+    --category-green: #10b981;
+    --category-orange: #f59e0b;
+    --category-pink: #ec4899;
+    --bg-color: #f4f7fa;
+    --card-bg: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --border-color: #e2e8f0;
+    --accent-color:#a277ba;
+  }
+  
+  .admin-categories-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    font-family: "Inter", "Segoe UI", sans-serif;
+  }
+  
+/* SIDEBAR */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #34495e;
+    color: white;
+    padding: 20px;
+    overflow-y: auto;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  
+  .admin-categories-content {
+    flex-grow: 1;
+    margin-left: 250px;
+    padding: 32px;
+    width: calc(100% - 250px);
+    height: calc(100vh - 64px); /* Adjusted to fit content + padding */
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    flex-grow: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .admin-categories-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+  
+  .admin-categories-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .admin-categories-header h1 svg {
+    color: var(--accent-color);
+  }
+  
+  .admin-add-category-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+  }
+  
+  .admin-add-category-btn:hover {
+    background-color: #4338ca;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(79, 70, 229, 0.3);
+  }
+  
+  /* Stats Cards */
+  .admin-categories-stats {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+  
+  .admin-stat-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    max-width: 240px;
+  }
+  
+  .admin-stat-card:hover {
+    transform: translateY(-4px);
+  }
+  
+  .admin-stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background-color: rgba(79, 70, 229, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .admin-stat-icon svg {
+    color: var(--accent-color);
+  }
+  
+  .admin-stat-details h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 4px 0;
+  }
+  
+  .admin-stat-details p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+  
+  /* Search Box */
+  .admin-categories-search {
+    margin-bottom: 32px;
+  }
+  
+  .search-container {
+    display: flex;
+    align-items: center;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 0 16px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    max-width: 400px;
+    border: 1px solid var(--border-color);
+  }
+  
+  .search-container svg {
+    color: var(--text-secondary);
+  }
+  
+  .search-container input {
+    border: none;
+    padding: 14px 12px;
+    font-size: 15px;
+    width: 100%;
+    outline: none;
+    background: transparent;
+    color: var(--text-primary);
+  }
+  
+  /* Categories Grid */
+  .admin-categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  
+  .admin-category-card {
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border-top: 5px solid var(--category-color);
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.5s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+    animation-fill-mode: both;
+  }
+  
+  .admin-categories-grid .admin-category-card:nth-child(1) { animation-delay: 0.1s; }
+  .admin-categories-grid .admin-category-card:nth-child(2) { animation-delay: 0.2s; }
+  .admin-categories-grid .admin-category-card:nth-child(3) { animation-delay: 0.3s; }
+  .admin-categories-grid .admin-category-card:nth-child(4) { animation-delay: 0.4s; }
+  .admin-categories-grid .admin-category-card:nth-child(5) { animation-delay: 0.5s; }
+  .admin-categories-grid .admin-category-card:nth-child(n+6) { animation-delay: 0.6s; }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .admin-category-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle at top right, rgba(255,255,255,0.2) 0%, transparent 70%);
+    border-radius: 0 0 0 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .admin-category-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  }
+  
+  .admin-category-card:hover::before {
+    opacity: 1;
+  }
+  
+  .admin-category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  
+  .admin-category-header h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+  }
+  
+  .admin-category-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.03);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .admin-category-icon svg {
+    color: var(--category-color);
+  }
+  
+  .admin-category-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .admin-category-stat {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .admin-category-stat .value {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+  
+  .admin-category-stat .label {
+    font-size: 12px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+  }
+  
+  .admin-category-growth {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--category-green);
+    background-color: rgba(16, 185, 129, 0.1);
+    padding: 6px 12px;
+    border-radius: 16px;
+    width: fit-content;
+  }
+  
+  .admin-category-growth svg {
+    color: var(--category-green);
+  }
+  
+  /* Loading State */
+  .admin-categories-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+    color: var(--text-secondary);
+  }
+  
+  .spinner {
+    width: 48px;
+    height: 48px;
+    border: 3px solid rgba(79, 70, 229, 0.2);
+    border-radius: 50%;
+    border-top-color: var(--accent-color);
+    animation: spin 1s linear infinite;
+    margin-bottom: 16px;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Error State */
+  .admin-categories-error, 
+  .admin-no-categories {
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    padding: 48px;
+    text-align: center;
+    color: var(--text-secondary);
+    margin-top: 24px;
+  }
+  
+  .admin-categories-error svg,
+  .admin-no-categories svg {
+    color: #f97316;
+    margin-bottom: 16px;
+  }
+  
+  .admin-categories-error h3,
+  .admin-no-categories h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 992px) {
+    .sidebar {
+      width: 220px;
+    }
+    
+    .admin-categories-content {
+      margin-left: 220px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .admin-categories-content {
+      padding: 20px;
+      margin-left: 0;
+    }
+    
+    .sidebar {
+      width: 0;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+    }
+    
+    .sidebar.active {
+      width: 250px;
+      transform: translateX(0);
+    }
+    
+    .admin-categories-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    
+    .admin-categories-stats {
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    .admin-stat-card {
+      max-width: none;
+    }
+  }

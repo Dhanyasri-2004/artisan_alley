@@ -1,0 +1,169 @@
+/* App.css */
+.unique-nav-item{
+  background-color: transparent !important;
+}
+/* Logo and Title */
+.unique-logo-container {
+  padding: 1.5rem; /* p-6 */
+  border-bottom: 1px solid #e5e7eb; /* border-b border-gray-100 */
+}
+
+.unique-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* gap-3 */
+}
+.logo-image {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.unique-logo-title {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: bold; /* font-bold */
+  background: linear-gradient(to right,#68c440, #46a71c); /* bg-gradient-to-r from-indigo-600 to-purple-600 */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* text-transparent */
+
+}
+
+.unique-logo-subtitle {
+  font-size: 0.75rem; /* text-xs */
+  color: #6b7280; /* text-gray-500 */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Main Container */
+.unique-app-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f7fafc; /* bg-gray-100 */
+}
+
+/* Sidebar Styles */
+.unique-sidebar {
+  width: 16rem; /* w-64 */
+  background-color: #ffffff; /* bg-white */
+  transition: width 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* shadow-lg */
+  position: relative;
+}
+
+.unique-sidebar.collapsed {
+  width: 5rem; /* w-20 */
+}
+
+/* Toggle Button */
+.unique-toggle-button {
+  position: absolute;
+  right: -0.75rem; /* -right-3 */
+  top: 2.5rem; /* top-10 */
+  background-color: #a277ba; /* Changed from #4f46e5 (indigo-600) */
+  color: #ffffff; /* text-white */
+  border-radius: 9999px; /* rounded-full */
+  padding: 0.25rem; /* p-1 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* shadow-lg */
+  transition: background-color 0.3s;
+}
+
+.unique-toggle-button:hover {
+  background-color: #a277ba; /* Changed from #4338ca (indigo-700) */
+}
+
+/* Logo and Title */
+.unique-logo-container {
+  padding: 1.5rem; /* p-6 */
+  border-bottom: 1px solid #e5e7eb; /* border-b border-gray-100 */
+}
+
+.unique-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* gap-3 */
+}
+
+.unique-logo-title {
+  font-size: 1.25rem; /* text-xl */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold; /* font-bold */
+  background: linear-gradient(to right, #a277ba, #a855f7); /* Changed from #4f46e5 to #a277ba */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* text-transparent */
+}
+
+.unique-logo-subtitle {
+  font-size: 0.75rem; /* text-xs */
+  color: #6b7280; /* text-gray-500 */
+}
+
+
+.unique-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.unique-nav-item {
+  margin-bottom: 0.5rem; /* space-y-2 */
+}
+
+.unique-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* gap-4 */
+  padding: 0.75rem; /* p-3 */
+  border-radius: 0.5rem; /* rounded-lg */
+  color: #4b5563; /* text-gray-600 */
+  transition: background-color 0.3s, color 0.3s;
+  text-decoration: none;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.unique-nav-link:hover {
+  background-color: #f3eaf6; /* Changed from #e0e7ff (indigo-50) to a lighter version of #a277ba */
+  color: #a277ba; /* Changed from #4f46e5 (indigo-600) */
+}
+
+.unique-nav-link.active {
+  background-color: #f3eaf6; /* Changed from #e0e7ff (indigo-50) to a lighter version of #a277ba */
+  color: #a277ba; /* Changed from #4f46e5 (indigo-600) */
+}
+
+/* Main Content Styles */
+.unique-main-content {
+  flex: 1;
+  padding: 2rem; /* p-8 */
+}
+
+.unique-main-title {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 600; /* font-semibold */
+  color: #1f2937; /* text-gray-800 */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.unique-main-subtitle {
+  color: #4b5563; /* text-gray-600 */
+  margin-top: 0.5rem; /* mt-2 */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.logout-button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  color: #4b5563;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: medium;
+}

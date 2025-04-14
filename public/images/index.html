@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Handicrafts Elegance</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="handmade.png" alt="Artisan Alley Logo" class="logo-img"> 
+                Artisan Alley
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    
+    <!-- Background Slideshow -->
+    <section class="slideshow">
+        <div class="slides">
+            <div class="slide"><img src="18trades.jpg" alt="Handicrafts 1"></div>
+            <div class="slide"><img src="armourer.webp" alt="Handicrafts 2"></div>
+            <div class="slide"><img src="barber.webp" alt="Handicrafts 3"></div>
+            <div class="slide"><img src="basketweaver.webp" alt="Handicrafts 3"></div>
+            <div class="slide"><img src="blacksmith.webp" alt="Handicrafts 3"></div>
+            <div class="slide"><img src="boatmaker.webp" alt="Handicrafts 3"></div>
+            <div class="slide"><img src="carpenter.webp" alt="Handicrafts 3"></div>
+            <div class="slide"><img src="cobbler.webp" alt="Handicrafts 3"></div>
+            <div class="slide"><img src="toymaker.webp" alt="Handicrafts 3"></div>
+            <div class="slide"><img src="fishnet.webp" alt="Handicrafts 3"></div>
+            <div class="slide"><img src="goldsmith.webp" alt="Handicrafts 3"></div>
+            <div class="slide"><img src="toolkitmaker.webp" alt="Handicrafts 3"></div>
+            <div class="slide"><img src="locksmith.webp" alt="Handicrafts 3"></div>
+            <div class="slide"><img src="masons.webp" alt="Handicrafts 3"></div>
+            <div class="slide"><img src="potter.webp" alt="Handicrafts 3"></div>
+            <div class="slide"><img src="tailor.webp" alt="Handicrafts 3"></div>
+            <div class="slide"><img src="sculptor.webp" alt="Handicrafts 3"></div>
+            <div class="slide"><img src="washerman.webp" alt="Handicrafts 3"></div>
+
+            <div class="slide"><img src="18trades.jpg" alt="Handicrafts 1 (Loop Back)"></div>  
+        </div>
+    </section>
+
+    <!-- Dots for Image Indicators -->
+    <div class="dots-container">
+        <div class="dot active" onclick="goToSlide(0)"></div>
+        <div class="dot" onclick="goToSlide(1)"></div>
+        <div class="dot" onclick="goToSlide(2)"></div>
+    </div>
+
+    <div class="overlay">
+        <h1>Unique Creations for Every Home</h1>
+        <p>Beauty of Imperfection</p>
+        <div class="auth-buttons">
+            <button class="login">Login</button>
+            <button class="signup">Sign Up</button>
+        </div>
+    </div>
+    <section class="testimonial-slider">
+        <button class="prev-btn">&#10094;</button>
+        <div class="testimonial-container">
+            <div class="testimonial-content">
+                <img src="18trades.jpg" alt="User Image">
+                <div class="testimonial-text">
+                    <p>"Viswakarma is known as the divine architect, representing 18 trades that form the backbone of traditional craftsmanship. These skilled artisans have preserved their heritage through intricate craftsmanship, building temples, tools, and fine artwork."</p>
+                    <h3>Viswakarma</h3>
+                </div>
+            </div>
+        </div>
+        <button class="next-btn">&#10095;</button>
+    </section>
+    
+    <!-- Handicrafts Section (New Content Below) -->
+    <section class="handicraft-section">
+        <div class="handicraft-container">
+            <!-- First Item: Text on Top, Image Below -->
+            <div class="handicraft-item1">
+                <p class="handicraft-quote1">"Every handmade piece tells a story of tradition and passion."</p>
+                <img src="product1.jpg" alt="Handicraft Image 1">
+            </div>
+    
+            <!-- Second Item: Image on Top, Text Below -->
+            <div class="handicraft-item2">
+                <img src="product2.jpg" alt="Handicraft Image 2">
+                <p class="handicraft-quote2">""Handcrafts embody the beauty of tradition, creativity, and the human touch in every detail."</p>
+            </div>
+        </div>
+    </section>
+    <section class="trending-section">
+        <h2 class="trending-title">TRENDING NOW</h2>
+        <div class="trending-container">
+            <!-- Product 1 -->
+            <div class="trending-item">
+                <div class="image-container">
+                    <img src="product3.jpg" alt="Wide Woven Basket" class="default-img">
+                    <img src="product3(1).jpg" alt="Wide Woven Basket Hover" class="hover-img">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Vintiquewise Indoor</h3>
+                    <p class="price">$90.00</p>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="trending-item">
+                <div class="image-container">
+                    <img src="product4.jpg" alt="Vintage Lamp" class="default-img">
+                    <img src="product4(1).jpg" alt="Vintage Lamp Hover" class="hover-img">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Clove And Orange Candle</h3>
+                    <p class="price"><span class="old-price">$50.00</span> <span class="new-price">$40.00</span></p>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="trending-item">
+                <div class="image-container">
+                    <img src="product5.jpg" alt="Basket Tray" class="default-img">
+                    <img src="product5(1).jpg" alt="Basket Tray Hover" class="hover-img">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Cottage Beige Ceiling Lights</h3>
+                    <p class="price"><span class="old-price">$30.00</span> <span class="new-price">$15.00</span></p>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="trending-item">
+                <div class="image-container">
+                    <img src="product6.jpg" alt="Round Casserole Dish" class="default-img">
+                    <img src="product6(1).jpg" alt="Round Casserole Hover" class="hover-img">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Wide Woven Basket</h3>
+                    <p class="price"><span class="old-price">$55.00</span> <span class="new-price">$40.00</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="features-section">
+        <div class="feature">
+            <img src="traditional-dance.png" alt="Culturally Rich">
+            <h3>CULTURALLY RICH</h3>
+            <p>The product has both practical value and the mark of the craftsman and the of a certain countryside.</p>
+        </div>
+        <div class="feature">
+            <img src="flower.png" alt="High Aesthetics">
+            <h3>HIGH AESTHETICS</h3>
+            <p>Each handicraft product is a work of art, both of high practical value and aesthetic countryside value.</p>
+        </div>
+        <div class="feature">
+            <img src="individuality.png" alt="Individuality">
+            <h3>INDIVIDUALITY</h3>
+            <p>Each handicraft has its own unique character and style of each unique craft village.</p>
+        </div>
+        <div class="feature">
+            <img src="inclusive.png" alt="Diversity">
+            <h3>DIVERSITY</h3>
+            <p>Diversity is shown in the method and materials used to make the product.</p>
+        </div>
+    </section>
+
+  <!-- Contact Section -->
+  <div class="contact-section">
+    <div class="footer-content">
+      <div class="left-section">
+        <div class="logo">
+            <img src="handmade.png" alt="Artisan Alley Logo" class="logo-img"> 
+            Artisan Alley
+        </div>
+        <p>"Every handmade piece tells a story of tradition and passion."</p>
+        <div class="social-icons">
+          <p><img src="facebook.png" alt="Facebook" /> Facebook</p>
+          <p><img src="pintrest.png" alt="Pinterest" /> Pinterest</p>
+          <p><img src="instagram.png" alt="Instagram" /> Instagram</p>
+        </div>
+      </div>
+  
+      <div class="middle-section">
+        <h3>Contact Info</h3>
+        <p><img src="location.png" alt="Location" /> Andhra Pradesh, India</p>
+        <p><img src="phonecall.png" alt="Phone" /> (208) 555-0112</p>
+        <p><img src="mail.png" alt="Email" /> example@gmail.com</p>
+      </div>
+  
+      <div class="right-section">
+        <h3>Contact Us</h3>
+        <form class="contact-form">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea placeholder="Your Message" required></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>Copyright © 2025. All Rights Reserved. Artisan Alley</p>
+    </div>
+  </div>
+    <script src="script.js"></script>
+</body>
+</html>

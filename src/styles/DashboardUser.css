@@ -1,0 +1,440 @@
+/* General Styling */
+.shop-product-showcase {
+  padding: 2rem; /* Padding for the product gallery */
+  background-color: #f9fafb; /* Light gray background */
+  min-height: 100vh; /* Minimum height for the gallery */
+}
+
+.showcase-title {
+  text-align: center; /* Center the title */
+  font-size: 2rem; /* Font size for the title */
+  color: #1f2937; /* Dark gray color */
+  margin-bottom: 2rem; /* Space below the title */
+}
+.feature-icon{
+  color: #a277ba !important;
+}
+.product-display-grid {
+  display: grid; /* Use grid layout for product cards */
+  grid-template-columns: repeat(4, 1fr) !important; /* Four columns */
+  gap: 1.5rem; /* Space between grid items */
+}
+
+.product-display-card {
+  background-color: #ffffff; /* White background for product card */
+  border-radius: 0.5rem; /* Rounded corners */
+  box-shadow: white; /* Light shadow for depth */
+  overflow: hidden; /* Hide overflow */
+  transition: transform 0.2s; /* Transition for hover effect */
+  margin: 20px; /* Adds space around each card */
+  align-items: center;
+}
+
+.product-display-card:hover {
+  transform: scale(1.05); /* Scale up on hover */
+}
+
+.product-display-image {
+  width: 100% !important; /* Full width */
+  height: 250px !important; /* Fixed height */
+  object-fit: cover !important; /* Ensures image covers the area without distortion */
+  display: block; /* Removes any extra space around the image */
+  border: none; /* Ensures no unwanted borders */
+  padding: 0; /* Removes any internal spacing */
+  margin: 0; /* Ensures no extra margins */
+}
+
+.product-display-details {
+  padding: 1rem; /* Padding for product info */
+}
+
+/* Remove underline from all links inside the product card */
+.product-display-card a {
+  text-decoration: none !important; /* Remove underline */
+  color: inherit !important; /* Keep the same text color */
+  display: block !important; /* Ensures it behaves as a block */
+}
+
+/* Ensures text inside does not inherit underline */
+.product-display-name,
+.product-display-brand,
+.product-display-price {
+  text-decoration: none !important;
+  color: inherit !important;
+  display: block !important;
+}
+
+.product-display-name {
+  font-size: 1.25rem !important; /* Font size for product title */
+  color: #1f2937 !important; /* Dark gray color */
+  margin: 0.5rem 0 !important; /* Margin above and below title */
+  text-align: center !important; /* Center alignment */
+  display: block !important; /* Ensures proper spacing */
+  text-decoration: none !important;
+  font-weight: lighter;
+}
+
+.product-display-brand {
+  font-size: 0.9rem !important; /* Font size for brand */
+  color: #6b7280 !important; /* Gray color for brand */
+  text-align: center !important; /* Center alignment */
+  display: block !important;
+  text-decoration: none !important;
+}
+
+.product-display-price {
+  font-size: 1.2rem !important; /* Font size for price */
+  color: #a277ba !important; /* Purple color for price */
+  margin: 0.5rem 0 !important; /* Margin above and below price */
+  text-decoration: none !important; /* Removes underline */
+  text-align: center !important; /* Center alignment */
+  display: block !important;
+  font-weight: lighter;
+}
+
+.add-to-cart-button {
+  width: 92%; /* Full width for button */
+  padding: 0.5rem; /* Padding for button */
+  background-color: #a277ba; /* Purple background */
+  color: white; /* White text */
+  border: none; /* No border */
+  border-radius: 0.375rem; /* Rounded corners */
+  font-size: 1rem; /* Font size */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.2s; /* Transition for hover effect */
+  margin-left: 12px !important;
+  margin-right: 12px !important;
+}
+
+.add-to-cart-button:hover {
+  background-color: #8a63a3; /* Darker purple on hover */
+}
+
+.out-of-stock {
+  opacity: 0.6; /* Reduce opacity for out-of-stock items */
+}
+
+.out-of-stock .add-to-cart-button {
+  background-color: #d1d5db; /* Gray background for out-of-stock button */
+  cursor: not-allowed; /* Not allowed cursor */
+}
+
+.inventory-status-badge {
+  background-color: #ff6b6b;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 8px;
+}
+.artisan-body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+.artisan-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: rgba(0, 0, 0, 0.4); /* Semi-transparent navbar */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.artisan-logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.artisan-logo {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.artisan-logo-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.artisan-nav-container {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-list li {
+  margin: 0 15px;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-family: 'Elegant', serif;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-list a:hover {
+  color: #f0c14b;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+}
+
+.cart-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 50px;
+}
+/* Fullscreen Slideshow */
+.artisan-slideshow {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.artisan-slideshow-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.artisan-slideshow-image.active {
+  opacity: 1;
+}
+
+.artisan-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.artisan-slideshow-text {
+  position: absolute;
+  text-align: center;
+  color: white ;
+  z-index: 2;
+}
+
+.artisan-slideshow-text h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: white;
+  font-weight: lighter;
+}
+
+.artisan-shop-now {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: white;
+  color: black;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-decoration: none !important;
+  border-radius: 4px;
+}
+
+.artisan-shop-now:hover {
+  background: rgb(163, 145, 145);
+}
+
+/* Line Separator Below Slideshow */
+.artisan-line {
+  width: 80%;
+  height: 2px;
+  background-color: #6a1b9a;
+  margin: 20px auto;
+}
+
+
+.artisan-subtitle {
+  color: #555;
+  margin-bottom: 40px;
+}
+.feature-icon {
+  height: 40px; /* Icon size */
+  width: 40px; /* Icon size */
+  color: #a277ba; /* Purple color for the icons */
+}
+
+/* Feature Section */
+.artisan-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.artisan-features {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  text-align: center;
+}
+
+.artisan-feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+
+.contact-section-unique {
+  padding: 80px 20px; /* Padding for the section */
+  background-color: #ffffff; /* White background */
+}
+
+.contact-container-unique {
+  max-width: 1200px; /* Maximum width for the container */
+  margin: 0 auto; /* Center the container */
+  padding: 0 20px; /* Padding for smaller screens */
+}
+
+.contact-title-unique {
+  font-size: 2.5rem; /* Title font size */
+  font-weight: bold; /* Bold title */
+  color: #2c3e50; /* Dark gray color */
+}
+
+.contact-description-unique {
+  margin-top: 16px; /* Space above the description */
+  font-size: 1.25rem; /* Description font size */
+  color: #34495e; /* Soft gray color */
+}
+
+.contact-grid-unique {
+  margin-top: 40px; /* Space above the grid */
+  display: grid; /* Use grid layout */
+  grid-template-columns: 1fr; /* 1 column by default */
+  gap: 32px; /* Space between items */
+}
+
+@media (min-width: 768px) {
+  .contact-grid-unique {
+    grid-template-columns: 1fr 1fr; /* 2 columns on medium screens */
+  }
+}
+
+.contact-info-unique {
+  background-color: #f9f9f9 !important; /* Light gray background for contact info */
+  padding: 32px; /* Padding inside the contact info */
+  border-radius: 8px; /* Rounded corners */
+}
+
+.contact-info-title-unique {
+  font-size: 2rem; /* Title font size */
+  font-weight: 600; /* Semi-bold title */
+  color: #2c3e50; /* Dark gray color */
+  margin-bottom: 24px; /* Space below the title */
+}
+
+.contact-info-list-unique {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  gap: 16px; /* Space between items */
+}
+
+.contact-item-unique {
+  display: flex; /* Flexbox for icon and text */
+  align-items: center; /* Center items vertically */
+}
+
+.contact-icon-unique {
+  height: 24px; /* Icon size */
+  width: 24px; /* Icon size */
+  color: #a277ba; /* Purple color for icons */
+}
+
+.contact-text-unique {
+  margin-left: 16px; /* Space between icon and text */
+  color: #7f8c8d; /* Light gray color */
+}
+
+.contact-form-unique {
+  display: flex; /* Flexbox for form layout */
+  flex-direction: column; /* Stack form elements vertically */
+  gap: 24px; /* Space between form elements */
+}
+
+.form-group-unique {
+  display: flex; /* Flexbox for label and input */
+  flex-direction: column; /* Stack label and input vertically */
+}
+
+.form-label-unique {
+  font-size: 1rem; /* Label font size */
+  font-weight: 500; /* Medium weight */
+  color: #4a4a4a; /* Dark gray color */
+}
+
+.form-input-unique,
+.form-textarea-unique {
+  margin-top: 8px; /* Space above input */
+  padding: 12px; /* Padding inside input */
+  border: 1px solid #d1d5db; /* Light gray border */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 1rem; /* Input font size */
+  color: #333; /* Dark text color */
+}
+
+.form-input-unique:focus,
+.form-textarea-unique:focus {
+  border-color: #a277ba; /* Purple border on focus */
+  outline: none; /* Remove default outline */
+}
+
+.form-button-unique {
+  background-color: #a277ba; /* Purple background for button */
+  color: white !important; /* White text color */
+  padding: 12px; /* Padding inside button */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.form-button-unique:hover {
+  background-color: #8a63a3; /* Darker purple on hover */
+}
+
+.artisan-add-to-cart-btnn{
+  margin-left: 12px !important;
+  margin-right: 12px !important;
+}
+
+.out-of-stock-badge {
+  background-color: #ff6b6b;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 8px;
+}

@@ -1,0 +1,563 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    color: white;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.3); /* Transparent effect */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: lighter;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.logo-img {
+    width: 50px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 10px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+/* Background Slideshow */
+.slideshow {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.slides {
+    display: flex;
+    width: 400%;
+    height: 100%;
+    transition: transform 1s ease-in-out;
+}
+
+.slide {
+    width: 100vw;
+    height: 100vh;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+/* Adding slight opacity effect */
+.slide::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Adjust opacity level */
+}
+
+/* Overlay text */
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    text-align: left;
+    color: white;
+    max-width: 500px;
+    z-index: 1000;
+}
+
+.overlay h1 {
+    font-size: 48px;
+    font-weight: lighter;
+    margin: 0;
+}
+
+.overlay p {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.auth-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.auth-buttons button {
+    padding: 12px 20px;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: lighter;
+}
+
+.login, .signup {
+    background: white;
+    color: black;
+    padding: 12px 20px;
+    border: 2px solid black;
+    font-size: 16px;
+    font-weight: lighter;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Hover Effect */
+.login:hover {
+    background:transparent;
+    color: white;
+    transform: scale(1.05); /* Slightly enlarges button */
+}
+
+.signup:hover {
+    background: transparent; /* Change to a color of your choice */
+    color: white;
+    transform: scale(1.05); /* Slightly enlarges button */
+}
+
+/* Active (Click) Effect */
+.login:active, .signup:active {
+    transform: scale(0.95); /* Slight press effect */
+}
+
+
+/* Dots (Indicators) */
+.dots-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+
+.dot.active {
+    opacity: 1;
+}
+
+/* Handicraft Section */
+.handicraft-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+    background: white;
+    margin-top: 0; /* Remove extra space below */
+    padding-top: 0;
+}
+
+.handicraft-container {
+    display: flex;
+    gap: 50px;
+}
+
+/* First Item: Text (Quote) on Top, Image Below */
+.handicraft-item1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 400px;
+}
+
+.handicraft-quote1 {
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 15px;
+    margin-right: 33px;
+}
+
+.handicraft-item1 img {
+    width: 500px;
+    height: 400px;
+    height: auto;
+    border-radius: 0px;
+    margin-right: 200px;
+}
+
+/* Second Item: Image on Top, Text (Quote) Below */
+.handicraft-item2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 400px;
+}
+
+.handicraft-item2 img {
+    width: 500px;
+    height: 630px;
+    border-radius: 0px;
+    margin-bottom: 15px; /* Space between image and text */
+    margin-left: 200px;
+}
+
+.handicraft-quote2 {
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bold;
+    margin-left: 30px;
+}
+
+/* Trending Now Section */
+.trending-section {
+    text-align: center;
+    margin: 50px 0;
+}
+
+/* Title */
+.trending-title {
+    font-size: 2rem;
+    font-weight: lighter;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+/* Product Grid - Ensures Exactly 4 Products Per Row */
+.trending-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    gap: 50px; /* Space between items */
+    justify-content: center;
+    max-width: 1400px; /* Adjust width */
+    margin: 0 auto;
+}
+
+/* Individual Product */
+.trending-item {
+    text-align: center;
+}
+
+/* Image Styling */
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Default and Hover Image */
+.default-img,
+.hover-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Hover Image Hidden by Default */
+.hover-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+/* Show Hover Image on Hover */
+.image-container:hover .default-img {
+    opacity: 0;
+}
+
+.image-container:hover .hover-img {
+    opacity: 1;
+}
+
+/* Product Info Styling */
+.product-info {
+    margin-top: 10px;
+    background: white;
+    padding: 10px;
+}
+
+/* Category */
+.category {
+    font-size: 0.9rem;
+    color: gray;
+    text-transform: uppercase;
+}
+
+/* Product Name */
+.product-name {
+    font-size: 1.2rem;
+    margin: 5px 0;
+    font-weight: lighter;
+}
+
+/* Price Styling */
+.price {
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: red;
+    margin-right: 5px;
+}
+
+.new-price {
+    color: green;
+    font-weight: bold;
+}
+
+/* Full-width, Full-screen Slideshow */
+.testimonial-slider {
+    width: 100vw;
+    height: 90vh; /* Reduce height slightly to avoid excessive spacing */
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0; /* Remove extra space below */
+    padding-bottom: 0;
+}
+
+/* Container holding the testimonial */
+.testimonial-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 85%; /* Covers most of the screen */
+    width: 100%;
+    height: 75vh; /* Slightly reduce height */
+    padding: 10px; /* Reduce padding */
+    margin-bottom: 0; /* Ensure no extra spacing */
+}
+
+/* Content inside the testimonial */
+.testimonial-content {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    width: 100%;
+    text-align: left;
+    margin-left: 90px;
+    gap: 40px;
+    margin-bottom: 0; /* Ensure no unnecessary space */
+}
+
+/* Image on the left */
+.testimonial-content img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Text on the right */
+.testimonial-text {
+    flex: 1;
+    max-width: 60%;
+}
+
+.testimonial-text p {
+    font-size: 24px;
+    color: #333;
+    line-height: 1.6; /* Reduce line spacing slightly */
+    font-weight: 400;
+}
+
+.testimonial-text h3 {
+    font-size: 26px;
+    color: #555;
+    margin-top: 5px; /* Reduce space above */
+    font-weight: bolder;
+}
+
+/* Navigation Buttons */
+.prev-btn, .next-btn {
+    background: none;
+    border: none;
+    font-size: 50px;
+    cursor: pointer;
+    color: #888;
+    transition: color 0.3s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.prev-btn:hover, .next-btn:hover {
+    color: black;
+}
+
+.prev-btn {
+    left: 30px;
+}
+
+.next-btn {
+    right: 30px;
+}
+
+/* Ensure next section is close */
+.next-section {
+    margin-top: 0;
+    padding-top: 20px; /* Reduce gap */
+}
+
+
+.features-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 70px 10%;
+    background: white;
+}
+
+.feature {
+    flex: 1;
+    padding: 20px;
+    max-width: 250px;
+}
+
+.feature img {
+    width: 50px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.feature h3 {
+    font-size: 18px;
+    color: #b14430; /* Adjust color to match your theme */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.contact-section {
+    background: burlywood;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    text-align: left;
+  }
+  
+  .left-section, .middle-section, .right-section {
+    flex: 1;
+    min-width: 280px;
+  }
+  
+  .social-icons p {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+  }
+  
+  .social-icons img {
+    width: 20px;
+    margin-right: 10px;
+  }
+  
+  .middle-section p {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+  }
+  
+  .middle-section img {
+    width: 18px;
+    margin-right: 10px;
+  }
+  
+  .right-section h3 {
+    margin-bottom: 10px;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .contact-form input, .contact-form textarea {
+    width: 95%;
+    padding: 7px;
+    margin-bottom: 7px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .contact-form button {
+    background: #121111;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    padding-bottom: 0;
+  }

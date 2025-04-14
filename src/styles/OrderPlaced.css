@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #a277ba, #bfdbfe);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+  
+  .card {
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    width: 100%;
+    max-width: 32rem; /* max-w-lg */
+  }
+  
+  .success-icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: transform 0.7s, opacity 0.7s;
+  }
+  
+  .success-icon.scale-up {
+    transform: scale(1);
+    opacity: 1;
+  }
+  
+  .success-icon.scale-down {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  
+  .success-message {
+    text-align: center;
+    transition: transform 0.7s, opacity 0.7s;
+  }
+  
+  .success-message.visible {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .success-message.hidden {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+  
+  .order-details {
+    margin-top: 2rem;
+  }
+  
+  .order-id {
+    background-color: #f9fafb;
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+  
+  .order-id p {
+    margin: 0.5rem 0;
+  }
+  
+  .timeline {
+    position: relative;
+    padding-top: 1rem;
+  }
+  
+  .timeline-line {
+    position: absolute;
+    left: 2rem;
+    top: 0;
+    height: 100%;
+    width: 0.125rem;
+    background-color: #e5e7eb;
+  }
+  
+  .timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+  
+  .timeline-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  .timeline-icon {
+    width: 4rem;
+  }
+  
+  .timeline-content {
+    margin-left: 1rem;
+  }
+  
+  .timeline-content p {
+    margin: 0.25rem 0;
+  }
+  
+  .button {
+    margin-top: 2rem;
+    text-align: center;
+  }
+  
+  .button .continue-shopping {
+    background-color: #a277ba;
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .button .continue-shopping:hover {
+    background-color: #935bb1;
+  }

@@ -1,0 +1,125 @@
+.user-orders-container {
+  max-width: 1000px;
+  margin: 100px auto 50px auto; /* Push down to avoid overlapping navbar */
+  padding: 40px 20px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.orders-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.no-orders-msg {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #888;
+}
+
+.orders-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.order-box {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  background-color: #fff;
+  transition: transform 0.2s ease;
+}
+
+.order-box:hover {
+  transform: translateY(-4px);
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.order-info span {
+  margin-left: 6px;
+  font-weight: 500;
+  color: #444;
+}
+
+.order-status {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.order-status.shipped {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.order-status.cancelled {
+  background-color: #fdecea;
+  color: #d32f2f;
+}
+
+.order-status.delivered {
+  background-color: #e8f5e9;
+  color: #388e3c;
+}
+
+.order-status.pending {
+  background-color: #fff3e0;
+  color: #f57c00;
+}
+
+.items-section {
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+  margin-top: 10px;
+}
+
+.item {
+  margin-bottom: 10px;
+}
+
+.item-name {
+  font-weight: 500;
+  color: #222;
+}
+
+.item-meta {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.meta-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-size: 0.95rem;
+  color: #444;
+  gap: 12px;
+}
+
+.order-total {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #000;
+}
+
+.order-date,
+.order-address {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
