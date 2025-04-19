@@ -222,19 +222,19 @@ const DashboardUser = () => {
         </div>
       </div>
 
-      {/* Features */}
-      <section id="features" className="features-section">
-        <div className="features-container">
-          <h2 className="features-title">Features</h2>
-          <p className="features-description">Experience the difference of authentic artisanal products</p>
-          <div className="features-grid">
-            <div className="feature-card"><Truck className="feature-icon" /><h3>Free Shipping</h3><p>Free shipping over ₹1000</p></div>
-            <div className="feature-card"><Shield className="feature-icon" /><h3>Secure Payments</h3><p>100% secure checkout</p></div>
-            <div className="feature-card"><RefreshCw className="feature-icon" /><h3>Easy Returns</h3><p>30-day hassle-free returns</p></div>
-            <div className="feature-card"><Clock className="feature-icon" /><h3>24/7 Support</h3><p>We're always here to help</p></div>
-          </div>
-        </div>
-      </section>
+{/* Features */}
+<section id="features" className="featurez-section">
+  <div className="featurez-container">
+    <h2 className="featurez-title">Features</h2>
+    <p className="featurez-description">Experience the difference of authentic artisanal products</p>
+    <div className="featurez-grid">
+      <div className="featurez-card"><Truck className="featurez-icon" /><h3>Free Shipping</h3><p>Free shipping over ₹1000</p></div>
+      <div className="featurez-card"><Shield className="featurez-icon" /><h3>Secure Payments</h3><p>100% secure checkout</p></div>
+      <div className="featurez-card"><RefreshCw className="featurez-icon" /><h3>Easy Returns</h3><p>30-day hassle-free returns</p></div>
+      <div className="featurez-card"><Clock className="featurez-icon" /><h3>24/7 Support</h3><p>We're always here to help</p></div>
+    </div>
+  </div>
+</section>
 
       {/* Products */}
       <section className="shop-product-showcase">
@@ -308,7 +308,7 @@ const DashboardUser = () => {
             <div className="contact-info-unique">
               <h3 className="contact-info-title-unique">Contact Information</h3>
               <div className="contact-info-list-unique">
-                <div className="contact-item-unique"><Mail className="contact-icon-unique" /><span>support@artisanAlley.com</span></div>
+                <div className="contact-item-unique"><Mail className="contact-icon-unique" /><span>support@Indiart.com</span></div>
                 <div className="contact-item-unique"><Phone className="contact-icon-unique" /><span>+1 (555) 123-4567</span></div>
                 <div className="contact-item-unique"><MapPin className="contact-icon-unique" /><span>123 Artisan Street, Craft City</span></div>
               </div>
@@ -324,7 +324,7 @@ const DashboardUser = () => {
       </section>
 
       <div className="contact-footer">
-        <p>© 2025 Artisan Alley. All Rights Reserved.</p>
+        <p>© 2025 Indiart. All Rights Reserved.</p>
       </div>
     </div>
   );

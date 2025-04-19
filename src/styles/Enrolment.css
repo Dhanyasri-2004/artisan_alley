@@ -1,0 +1,346 @@
+/* ArtisanEnrollment.css */
+:root {
+    --primary-color: #a277ba;
+    --primary-light: #c9b3d7;
+    --primary-dark: #8255a0;
+    --text-color: #333333;
+    --background-light: white;
+    --error-color: #F44336;
+    --success-color: #4CAF50;
+    --border-radius: 12px;
+    --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+    --sidebar-width: 280px;
+    --card-background: #ffffff;
+    --input-background: #f9f7fc;
+    --input-focus-background: #f0e9f5;
+  }
+  
+  
+  /* Sidebar Styling - Fixed as requested */
+  .sidebarrrr {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background-color: #1e293b;
+    color: white;
+    padding: 2rem 1.5rem;
+    z-index: 100;
+    box-shadow: 5px 0 25px rgba(3, 105, 161, 0.15);
+    overflow: hidden; /* Remove sidebar scrolling */
+  }
+  
+  /* Container holds sidebar and content side-by-side */
+  .artisan-enrollment-container {
+    display: flex;
+    height: 100vh;
+    background: linear-gradient(135deg, #f6f0ff 0%, #f0f9ff 100%);
+    overflow: hidden; /* Prevent container scrolling */
+  }
+  
+  /* Main content next to sidebar */
+  .enrollment-content {
+    margin-left: 50px;
+    flex: 1;
+    height: 100%;
+    overflow-y: auto; /* Add scrolling to enrollment content */
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Changed from center for better scrolling */
+  }
+  
+  .enrollment-card {
+    width: 100%;
+    max-width: 820px;
+    background-color: var(--card-background);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    margin: 20px auto;
+    position: relative;
+  }
+  
+  .card-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .card-header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  
+  .card-header p {
+    font-size: 16px;
+    opacity: 0.9;
+    font-weight: 400;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .card-header::after {
+    content: '';
+    position: absolute;
+    bottom: -16px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 32px;
+    height: 32px;
+    background-color: white;
+    transform: rotate(45deg);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  form {
+    padding: 40px 50px;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .form-group {
+    margin-bottom: 24px;
+    flex: 1;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: var(--text-color);
+    font-size: 14px;
+    letter-spacing: 0.3px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 16px;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    font-size: 15px;
+    transition: var(--transition);
+    background-color: var(--input-background);
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: var(--input-focus-background);
+    box-shadow: 0 0 0 4px rgba(162, 119, 186, 0.1);
+  }
+  
+  .rating-group {
+    margin-top: 10px;
+  }
+  
+  .rating-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .rating-slider {
+    flex: 1;
+    height: 6px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: linear-gradient(to right, var(--primary-light) 0%, var(--primary-color) 100%);
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .rating-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    cursor: pointer;
+    border: 3px solid white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+  }
+  
+  .rating-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+  }
+  
+  .rating-value {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary-color);
+    min-width: 40px;
+    text-align: center;
+    background-color: var(--input-background);
+    padding: 6px 12px;
+    border-radius: 20px;
+  }
+  
+  .submit-button {
+    display: block;
+    width: 30%;
+    padding: 18px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: white;
+    border: none;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 40px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 10px 20px rgba(162, 119, 186, 0.2);
+  }
+  
+  .submit-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(162, 119, 186, 0.3);
+  }
+  
+  .submit-button:active {
+    transform: translateY(0);
+  }
+  
+  .notification {
+    padding: 16px;
+    margin: 20px 50px 0;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 500;
+    animation: slideDown 0.5s ease forwards;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .notification.success {
+    background-color: rgba(76, 175, 80, 0.15);
+    color: #2e7d32;
+    border: 1px solid rgba(76, 175, 80, 0.3);
+  }
+  
+  .notification.error {
+    background-color: rgba(244, 67, 54, 0.15);
+    color: #d32f2f;
+    border: 1px solid rgba(244, 67, 54, 0.3);
+  }
+  
+  .notification::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+  }
+  
+  .notification.success::before {
+    background-color: var(--success-color);
+  }
+  
+  .notification.error::before {
+    background-color: var(--error-color);
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 992px) {
+    form {
+      padding: 30px 40px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    :root {
+      --sidebar-width: 0px;
+    }
+  
+    .sidebarrrr {
+      width: 240px;
+      transform: translateX(-100%);
+    }
+  
+    .sidebarrrr.open {
+      transform: translateX(0);
+    }
+  
+    .enrollment-content {
+      margin-left: 0;
+      padding: 20px 15px;
+    }
+    .submit-button{
+      width: 100%;
+    }
+  
+    .card-header {
+      padding: 30px 20px;
+    }
+  
+    form {
+      padding: 25px 20px;
+    }
+  
+    .form-row {
+      flex-direction: column;
+      gap: 0;
+    }
+  
+    input {
+      padding: 14px;
+    }
+  
+    .notification {
+      margin: 20px 20px 0;
+    }
+  }
+  
+  /* For very small screens */
+  @media (max-width: 480px) {
+    .card-header h1 {
+      font-size: 24px;
+    }
+  
+    .card-header p {
+      font-size: 14px;
+    }
+  
+    .enrollment-card {
+      border-radius: 16px;
+    }
+  
+    .form-group {
+      margin-bottom: 16px;
+    }
+  
+    label {
+      font-size: 13px;
+    }
+  
+    .submit-button {
+      padding: 16px;
+    }
+  }

@@ -154,7 +154,7 @@ const ProductsPage2 = ({ selectedCategory }) => {
       )}
 
       <div className="product-page-footer">
-        <p>© 2025 Artisan Alley. All Rights Reserved.</p>
+        <p>© 2025 Indiart. All Rights Reserved.</p>
       </div>
     </div>
   );

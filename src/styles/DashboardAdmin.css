@@ -1,13 +1,12 @@
 .artisans-list,.orders-list {
-  margin-top: 1rem;
+  margin-top: 0.75rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 .order-id {
   background-color: transparent !important;
 }
-
 
 .artisan-item,.order-item {
   display: flex;
@@ -157,7 +156,6 @@
   color: #6b7280; /* Gray-500 */
 }
 
-
 .order-product, .artisan-name {
   font-weight: 500; /* Font-medium */
   color: #1f2937; /* Gray-800 */
@@ -182,11 +180,9 @@
   color: #22c55e; /* Green-500 */
 }
 
-
 .pending {
   color: #f59e0b; /* Orange-500 */
 }
-
 
 .sales-label {
   font-size: 0.875rem; /* Text-sm */
@@ -213,7 +209,194 @@
   background-color: #f9fafb; /* Light gray background for dashboard */
   padding: 2rem; /* Padding for dashboard */
   overflow-y: auto; /* Allow scrolling if content overflows */
+  min-height: calc(100vh - 4rem); /* Set a minimum height for the dashboard content */
 }
 .processing {
   color: #a277ba; /* Was Blue-500 (#3b82f6), now purple (#a277ba) */
+}
+
+/* Updated Mobile Responsiveness CSS with more compact design */
+@media (max-width: 767px) {
+  /* Reset grid container for mobile */
+  .grid-container {
+    display: block;
+    height: auto;
+    width: 100%;
+  }
+  
+  /* Position dashboard content directly below the fixed navbar */
+  .dashboard {
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding: 0.5rem; /* Smaller padding on mobile */
+    box-sizing: border-box;
+    margin-top: 10px; /* Remove any top margin */
+    z-index: 10;
+    min-height: calc(100vh - 4rem); /* Adjust height based on navbar height */
+  }
+  
+  /* Header adjustments - more compact */
+  .header {
+    margin-bottom: 0.5rem;
+    margin-top: 0.25rem;
+  }
+  
+  .title {
+    font-size: 1rem; /* Smaller title */
+    margin-bottom: 0.15rem;
+  }
+  
+  .welcome {
+    font-size: 0.75rem; /* Smaller welcome text */
+  }
+  
+  /* Stats grid layout - tighter */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  /* Stat card styling - more compact */
+  .stat-card {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+  }
+  
+  .stat-header {
+    margin-bottom: 0.35rem;
+  }
+  
+  .icon-container {
+    padding: 0.35rem;
+  }
+  
+  .icon-container svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .stat-value {
+    font-size: 0.95rem; /* Smaller stat value */
+    margin: 0.1rem 0;
+  }
+  
+  .stat-title {
+    font-size: 0.7rem; /* Smaller stat title */
+    margin: 0;
+  }
+  
+  /* Content grid becomes single column with tighter spacing */
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  
+  /* Orders and Artisans sections - more compact */
+  .orders, .artisans {
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+  }
+  
+  .orders-header, .artisans-header {
+    margin-bottom: 0.5rem;
+  }
+  
+  .orders-title, .artisans-title {
+    font-size: 0.85rem;
+  }
+  
+  .orders-header svg, .artisans-header svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  /* Order and artisan lists - tighter spacing */
+  .artisans-list, .orders-list {
+    margin-top: 0.35rem;
+    gap: 0.35rem;
+  }
+  
+  /* Order and artisan items - more compact layout */
+  .artisan-item, .order-item {
+    padding: 0.4rem;
+    border-radius: 0.35rem;
+    box-shadow: none;
+  }
+  
+  /* Make text smaller in item details */
+  .order-id, .artisan-id, .artisan-name, .artisan-skill {
+    font-size: 0.7rem;
+    margin: 0.15rem 0;
+  }
+  
+  .order-product, .artisan-name {
+    font-size: 0.75rem;
+  }
+  
+  .order-price, .order-status {
+    font-size: 0.7rem;
+  }
+}
+
+/* Small phone adjustments - even more compact */
+@media (max-width: 375px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr); /* Keep two columns but make them smaller */
+    gap: 0.35rem;
+  }
+  
+  .dashboard {
+    padding: 0.4rem;
+    min-height: calc(100vh - 3.5rem);
+  }
+  
+  .stat-card {
+    padding: 0.4rem;
+  }
+  
+  .stat-value {
+    font-size: 0.85rem;
+  }
+  
+  .stat-title {
+    font-size: 0.65rem;
+  }
+  
+  .title {
+    font-size: 0.9rem;
+  }
+  
+  .welcome {
+    font-size: 0.7rem;
+  }
+}
+
+/* Landscape orientation - more compact grid layout */
+@media (max-width: 767px) and (orientation: landscape) {
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.4rem;
+  }
+  
+  .content-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.4rem;
+  }
+  
+  .dashboard {
+    min-height: calc(100vh - 5rem);
+    padding: 0.5rem 0.75rem;
+  }
+  
+  /* Even smaller text for landscape mode */
+  .stat-value {
+    font-size: 0.85rem;
+  }
+  
+  .stat-title {
+    font-size: 0.65rem;
+  }
 }

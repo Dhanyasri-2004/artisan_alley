@@ -67,3 +67,84 @@
 .navbar-view-product-btn:hover {
   background-color: #a277ba;
 }
+/* Mobile Responsiveness for Navbar - Single Row Layout */
+@media screen and (max-width: 768px) {
+  .navbarrrr {
+    padding: 0.5rem 0.75rem;
+    justify-content: space-between;
+  }
+  .navbarrrr {
+    padding: 0.5rem 0.5rem;
+    height: 30px;
+}
+
+  .navbar-logo {
+    flex-shrink: 1;
+  }
+
+  .navbar-logo-img {
+    width: 25px;
+    margin-right: 0.25rem;
+  }
+
+  .navbar-logo-title {
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  .navbar-right {
+    gap: 0.25rem;
+    flex-shrink: 0;
+  }
+
+  .navbar-link, 
+  .navbar-add-product-btn, 
+  .navbar-view-product-btn {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.5rem;
+    margin-right: 0.25rem;
+    white-space: nowrap;
+  }
+}
+
+/* For very small screens (iPhone SE, etc.) */
+@media screen and (max-width: 480px) {
+  .navbarrrr {
+    padding: 0.4rem 0.5rem;
+  }
+
+  .navbar-logo-img {
+    width: 20px;
+  }
+
+  .navbar-logo-title {
+    max-width: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.8rem;
+  }
+
+  .navbar-link, 
+  .navbar-add-product-btn, 
+  .navbar-view-product-btn {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.4rem;
+    margin-right: 0.15rem;
+    border-radius: 0.25rem;
+  }
+
+  /* Optional: Hide text and show only icons for extremely small screens */
+  @media screen and (max-width: 360px) {
+    .navbar-link span,
+    .navbar-add-product-btn span,
+    .navbar-view-product-btn span {
+      display: none;
+    }
+    
+    /* Add these classes to your React component if needed */
+    .navbar-icon {
+      display: inline-block;
+      font-size: 1rem;
+    }
+  }
+}

@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import ErrorBoundary from './ErrorBoundary';
 import Navbar from './pages/Navbar';
 import './App.css';
-
+const Enrolment = lazy(() => import('./pages/Enrolment'));
 const Home = lazy(() => import('./pages/Home'));
 const UserOrders = lazy(() => import('./pages/UserOrders'));
 const Artisans = lazy(() => import('./pages/Artisans'));
@@ -79,6 +79,7 @@ function AppContent() {
             <Route path="/categories" element={<Categories />} />
             <Route path="/artisanSummaryPage" element={<ArtisanSummaryPage />} />
             <Route path="/attendancePage" element={<AttendancePage />} />
+            <Route path="/enroll" element={<Enrolment />} />
           </Routes>
         </ErrorBoundary>
       </Suspense>

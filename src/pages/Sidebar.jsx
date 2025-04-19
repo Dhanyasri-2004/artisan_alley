@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { 
+import {
   LayoutDashboard, 
   ShoppingBag, 
   FolderTree, 
-  Users, Clock, Wallet,
+  Users,
+  Clock,
+  Wallet,
   ChevronLeft,
-  ChevronRight, LogOut,
-  Package
+  ChevronRight, 
+  LogOut,
+  Package,
+  UserPlus, // 👈 Add this for "Enroll"
 } from 'lucide-react';
 import '../styles/Sidebar.css';
 
@@ -28,6 +32,7 @@ function Sidebar() {
     { icon: <Users size={24} />, label: 'Artisans', path: '/artisans' },
     { icon: <Clock size={24} />, label: 'Worker Attendance', path: '/attendancePage' },
     { icon: <Wallet size={24} />, label: 'Pay Slip', path: '/artisanSummaryPage' },
+    { icon: <UserPlus size={24} />, label: 'Enroll', path: '/enroll' },
   ];
 
   return (
@@ -45,7 +50,7 @@ function Sidebar() {
             <img src="/images/logo.png" alt="Maan Meal Logo" className="logo-image" />
             {!isCollapsed && (
               <div>
-                <h1 className="unique-logo-title">Artisan Alley</h1>
+                <h1 className="unique-logo-title">Indiart</h1>
                 <p className="unique-logo-subtitle">Admin Dashboard</p>
               </div>
             )}

@@ -304,3 +304,233 @@
   z-index: 1;
  
 }
+/* Mobile Responsiveness for Boutique Product Page - Two Column Layout */
+
+/* General responsive adjustments */
+@media screen and (max-width: 768px) {
+  /* Adjust page padding for mobile */
+  .boutique-page-wrapper {
+    padding-top: 100px; /* Account for taller mobile navbar */
+  }
+  
+  /* Product showcase area */
+  .boutique-products-showcase {
+    padding: 1rem 0.75rem 2rem;
+  }
+  
+  /* Section title sizing */
+  .boutique-section-title {
+    font-size: 22px;
+    margin: 15px 0;
+  }
+  
+  .product-total {
+    font-size: 16px;
+  }
+  
+  /* Maintain two products per row */
+  .boutique-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  
+  /* Product item styling */
+  .boutique-product-item {
+    width: 100%;
+    max-width: none;
+  }
+  
+  /* Adjust product image height */
+  .boutique-product-image {
+    height: 150px;
+  }
+  
+  /* Adjust product details */
+  .boutique-product-details {
+    padding: 0.75rem;
+  }
+  
+  .boutique-product-name {
+    font-size: 0.9rem;
+    margin: 0.25rem 0;
+  }
+  
+  .boutique-product-maker {
+    font-size: 0.75rem;
+  }
+  
+  .boutique-product-cost {
+    font-size: 0.9rem;
+    margin: 0.25rem 0;
+  }
+  
+  /* Cart button adjustments */
+  .boutique-cart-button {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 8px;
+    margin-bottom: 15px;
+  }
+  .contact-footer{
+    font-size: 0.70rem;
+    text-align: center;
+  }
+}
+
+/* Small mobile devices */
+@media screen and (max-width: 576px) {
+  .boutique-page-wrapper {
+    padding-top: 200px; /* Further increased for smaller screens */
+  }
+  
+  /* Maintain two products per row but with tighter spacing */
+  .boutique-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+  
+  /* Reduce paddings and margins */
+  .boutique-products-showcase {
+    padding: 0.75rem 0.5rem 1.5rem;
+  }
+  
+  /* Smaller images for better fit */
+  .boutique-product-image {
+    height: 130px;
+  }
+  
+  /* Tighter product details */
+  .boutique-product-details {
+    padding: 0.5rem;
+  }
+  
+  .boutique-product-name {
+    font-size: 0.85rem;
+    line-height: 1.2;
+    margin-bottom: 0.2rem;
+  }
+  
+  .boutique-product-maker {
+    font-size: 0.7rem;
+  }
+  
+  .boutique-product-cost {
+    font-size: 0.9rem;
+    margin: 0.2rem 0;
+  }
+  
+  /* More compact button */
+  .boutique-cart-button {
+    padding: 0.4rem;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Smaller new item badge */
+  .new-item::before {
+    top: 5px;
+    right: 5px;
+    padding: 2px 5px;
+    font-size: 9px;
+  }
+}
+
+/* Very small devices (under 375px) */
+@media screen and (max-width: 375px) {
+  .boutique-page-wrapper {
+    padding-top: 140px;
+  }
+  
+  /* Smaller titles */
+  .boutique-section-title {
+    font-size: 20px;
+  }
+  
+  /* Even smaller product elements */
+  .boutique-product-image {
+    height: 110px;
+  }
+  
+  .boutique-product-name {
+    font-size: 0.8rem;
+  }
+  
+  .boutique-product-maker {
+    font-size: 0.65rem;
+  }
+  
+  .boutique-product-cost {
+    font-size: 0.85rem;
+  }
+  
+  /* Minimal padding for very small screens */
+  .boutique-product-details {
+    padding: 0.4rem;
+  }
+  
+  /* Optimize button for tiny screens */
+  .boutique-cart-button {
+    padding: 0.35rem;
+    font-size: 0.75rem;
+    margin-top: 5px;
+    margin-bottom: 8px;
+  }
+}
+
+/* Touch-friendly enhancements */
+@media (pointer: coarse) {
+  /* Larger touch targets for mobile */
+  .boutique-cart-button {
+    min-height: 38px; /* Slightly reduced but still touch-friendly */
+  }
+  
+  /* Reduce hover effects that don't work well on touch */
+  .boutique-product-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(162, 119, 186, 0.15);
+  }
+  
+  .boutique-product-item:hover .boutique-product-image {
+    transform: scale(1.03);
+  }
+  
+  /* Add active state for touch feedback */
+  .boutique-cart-button:active {
+    background-color: #8a5da0;
+    transform: scale(0.98);
+  }
+  
+  /* Category options need larger touch targets */
+  .nav-category-option {
+    padding: 12px 15px;
+  }
+}
+
+/* Fix for iOS Safari 100vh issue */
+@supports (-webkit-touch-callout: none) {
+  .boutique-page-wrapper {
+    min-height: -webkit-fill-available;
+  }
+}
+
+/* Empty and error states */
+@media screen and (max-width: 576px) {
+  .boutique-empty-container {
+    padding: 25px 15px;
+  }
+  
+  .boutique-empty-state {
+    font-size: 18px;
+  }
+  
+  .empty-message {
+    font-size: 14px;
+  }
+  
+  .loading-state, .error-state {
+    height: 250px;
+    font-size: 16px;
+  }
+}

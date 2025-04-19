@@ -1,5 +1,201 @@
 /* Base Styles */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap');
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  /* Navigation */
+  .navbarrr {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .logoooo {
+    margin-bottom: 1rem;
+  }
+  
+  .nav-container {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .nav-links li {
+    margin: 5px 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .artisan-btn {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  /* Slideshow and Overlay */
+  .slideshow {
+    height: 50vh;
+  }
+  
+  .overlay h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  
+  .auth-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .login2, .signup2 {
+    width: 100%;
+  }
+  
+  /* About Section */
+  .about-section {
+    padding: 2rem 1rem;
+  }
+  
+  .about-title {
+    font-size: 2rem;
+  }
+  
+  .about-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .about-card {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 1rem;
+  }
+  
+  /* Features Section */
+  .features-section {
+    padding: 2rem 1rem;
+  }
+  
+  .features-title {
+    font-size: 2rem;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Products Section */
+  .artisan-product-gallery22 {
+    padding: 2rem 1rem;
+  }
+  
+  .textc {
+    font-size: 2rem;
+  }
+  
+  .artisan-product-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .view-all-btn {
+    width: 100%;
+  }
+  
+  /* Services Section */
+  .services-section {
+    padding: 2rem 1rem;
+  }
+  
+  .services-container {
+    padding: 0;
+  }
+  
+  .services-title {
+    font-size: 2rem;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .service-card {
+    margin-bottom: 1rem;
+  }
+  
+  /* Contact Section */
+  .contact-section-unique {
+    padding: 2rem 1rem;
+  }
+  
+  .contact-grid-unique {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-info-unique {
+    margin-bottom: 2rem;
+  }
+  
+  .form-input-unique,
+  .form-textarea-unique,
+  .form-button-unique {
+    width: 100%;
+  }
+}
+
+/* Small devices (landscape phones) */
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .artisan-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+/* Medium devices (tablets) */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .about-cards {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .features-grid,
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .artisan-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .contact-grid-unique {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* For better image responsiveness */
+@media screen and (max-width: 991px) {
+  .artisan-product-img {
+    height: 200px;
+    object-fit: cover;
+  }
+}
+
+/* Fix for iPhone and small devices */
+@media screen and (max-width: 375px) {
+  .overlay h1 {
+    font-size: 1.5rem;
+  }
+  
+  .about-title,
+  .features-title,
+  .textc,
+  .services-title,
+  .contact-title-unique {
+    font-size: 1.8rem;
+  }
+}
 .nav-links button {
   background: none;
   border: none;
@@ -1723,70 +1919,6 @@ body {
     opacity: 1;
 }
 
-/* Handicraft Section */
-.handicraft-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 100px 0;
-    background: white;
-    margin-top: 0; /* Remove extra space below */
-    padding-top: 0;
-}
-
-.handicraft-container {
-    display: flex;
-    gap: 50px;
-}
-
-/* First Item: Text (Quote) on Top, Image Below */
-.handicraft-item1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 400px;
-}
-
-.handicraft-quote1 {
-    font-size: 20px;
-    font-style: italic;
-    font-weight: bold;
-    margin-bottom: 15px;
-    margin-right: 33px;
-}
-
-.handicraft-item1 img {
-    width: 500px;
-    height: 400px;
-    height: auto;
-    border-radius: 0px;
-    margin-right: 200px;
-}
-
-/* Second Item: Image on Top, Text (Quote) Below */
-.handicraft-item2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 400px;
-}
-
-.handicraft-item2 img {
-    width: 500px;
-    height: 630px;
-    border-radius: 0px;
-    margin-bottom: 15px; /* Space between image and text */
-    margin-left: 200px;
-}
-
-.handicraft-quote2 {
-    font-size: 20px;
-    font-style: italic;
-    font-weight: bold;
-    margin-left: 30px;
-}
 
 /* Trending Now Section */
 .trending-section {
@@ -2053,7 +2185,6 @@ body {
 .artisan-product-gallery22 {
   padding: 2rem; /* Padding for the product gallery */
   background-color: #f9fafb; /* Light gray background */
-  min-height: 100vh; /* Minimum height for the gallery */
 }
 
 .textc {
@@ -2196,4 +2327,1074 @@ body {
 
 .view-all-btn:hover {
   background-color:#a277ba;
+}
+/* Mobile Responsiveness for Home Page - Works with existing class structure */
+
+/* Base responsive adjustments */
+@media (max-width: 768px) {
+  /* General container adjustments */
+  .home-container {
+    padding: 0 10px;
+  }
+  
+  /* Navigation adjustments - using existing classes */
+  .navbarrr {
+    flex-direction: column;
+    padding: 10px;
+    position: relative;
+  }
+  
+  .logoooo {
+    margin-bottom: 5px;
+    font-size: 20px;
+    width: 100%;
+    display: flex;
+    margin-left: 0px;
+    justify-content: flex-start; /* Align logo/title to the left */
+  }
+  
+  .logo-imgggg {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .nav-container {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .nav-links {
+    width: 100%;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .nav-links li {
+    margin: 5px;
+  }
+  
+  .nav-links button {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+  
+  .artisan-btn {
+    padding: 8px 15px;
+    font-size: 14px;
+    margin-top: 5px;
+    width: 120px;
+  }
+  
+  /* Auth buttons in overlay - making them smaller */
+  .auth-buttons {
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .login2, .signup2 {
+    padding: 8px 16px;
+    font-size: 14px;
+    min-width: 100px;
+    margin-bottom: 300px;
+    width: auto;
+  }
+  
+  /* Slideshow adjustments */
+  .slideshow {
+    height: 40vh;
+  }
+  
+  .slide img {
+    height: 40vh;
+    object-position: center;
+  }
+  
+  /* Overlay content adjustments */
+  .overlay {
+    padding: 0 20px;
+    text-align: center;
+  }
+  
+  .overlay h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+/* About section adjustments */
+.about-section {
+  padding: 40px 15px;
+}
+
+.about-title {
+  font-size: 24px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* Mobile (default) */
+@media (max-width: 768px) {
+  .about-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .about-card {
+    width: 100%;
+    max-width: 450px;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Features section adjustments */
+  .features-section {
+    padding: 40px 15px;
+  }
+  
+  .features-title {
+    font-size: 24px;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .feature-card {
+    padding: 15px;
+  }
+  
+  /* Products section adjustments - UPDATED */
+  .artisan-product-gallery22 {
+    padding: 40px 10px; /* Reduced horizontal padding */
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .artisan-product-gallery22 h2.textc {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  .auth-buttons button {
+    /* padding: 12px 20px; */
+    border: none;
+    /* font-size: 16px; */
+    /* border-radius: 5px; */
+    cursor: pointer;
+    /* font-weight: lighter; */
+}
+  /* Always show two products per row */
+  .artisan-product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 0 auto;
+    width: calc(100% - 10px); /* Slightly smaller than container */
+  }
+  
+  .artisan-product-card {
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  
+  .artisan-product-img {
+    height: 140px;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .artisan-product-info {
+    padding: 8px;
+  }
+  
+  .artisan-product-titleeee {
+    font-size: 14px;
+    margin: 0 0 2px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .artisan-product-brandddd {
+    font-size: 12px;
+    margin: 0 0 2px 0;
+  }
+  
+  .artisan-product-priceeee {
+    font-size: 16px;
+    margin: 2px 0 6px 0;
+  }
+  
+  .artisan-add-to-cart-btnn {
+    padding: 8px 0;
+    font-size: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .view-all-btn {
+    width: 80%;
+    padding: 12px 0;
+    margin: 20px auto 0;
+    display: block;
+  }
+  
+  /* Services section adjustments */
+  .services-section {
+    padding: 40px 15px;
+  }
+  
+  .services-title {
+    font-size: 24px;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .service-card {
+    padding: 15px;
+  }
+  
+  .service-title {
+    font-size: 18px;
+  }
+  
+  .service-list li {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  /* Contact section adjustments */
+  .contact-section-unique {
+    padding: 40px 15px;
+  }
+  
+  .contact-title-unique {
+    font-size: 24px;
+  }
+  
+  .contact-grid-unique {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .contact-info-unique {
+    padding: 15px;
+  }
+  
+  .contact-form-unique {
+    padding: 15px;
+  }
+  
+  .form-input-unique, 
+  .form-textarea-unique {
+    padding: 10px;
+  }
+  
+  .form-button-unique {
+    width: 100%;
+    padding: 12px 0;
+  }
+}
+
+/* Base responsive adjustments */
+@media (max-width: 768px) {
+  /* General container adjustments */
+  .home-container {
+    padding: 0 10px;
+  }
+  
+  /* Navigation adjustments - using existing classes */
+  .navbarrr {
+    flex-direction: column;
+    padding: 10px;
+    position: relative;
+  }
+  
+  .logoooo {
+    margin-bottom: 5px;
+    font-size: 20px;
+    width: 100%;
+    display: flex;
+    margin-left: 0px;
+    justify-content: flex-start; /* Align logo/title to the left */
+  }
+  
+  .logo-imgggg {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .nav-container {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .nav-links {
+    width: 100%;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .nav-links li {
+    margin: 5px;
+  }
+  
+  .nav-links button {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+  
+  .artisan-btn {
+    padding: 8px 15px;
+    font-size: 14px;
+    margin-top: 5px;
+    width: 120px;
+  }
+  
+  /* Auth buttons in overlay - making them smaller */
+  .auth-buttons {
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .login2, .signup2 {
+    padding: 8px 16px;
+    font-size: 14px;
+    min-width: 100px;
+    margin-bottom: 300px;
+    width: auto;
+  }
+  
+  /* Slideshow adjustments */
+  .slideshow {
+    height: 40vh;
+  }
+  
+  .slide img {
+    height: 40vh;
+    object-position: center;
+  }
+  
+  /* Overlay content adjustments */
+  .overlay {
+    padding: 0 20px;
+    text-align: center;
+  }
+  
+  .overlay h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+/* About section adjustments */
+.about-section {
+  padding: 40px 15px;
+}
+
+.about-title {
+  font-size: 24px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* Mobile (default) */
+@media (max-width: 768px) {
+  .about-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+    .about-description {
+      margin-top: 1px;
+      font-size: 0.8rem;
+      color: #34495e;
+      line-height: 1;
+  }
+  
+  .about-card {
+    width: 80%;
+    max-width: 400px;
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.about-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+.about-card-description {
+  color: #7f8c8d;
+  font-size: 12px;
+  line-height: 1;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.contact-footer {
+  text-align: center;
+  font-size: 12px;
+}
+  
+  /* Features section adjustments */
+  .features-section {
+    padding: 40px 15px;
+  }
+  .textc {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 16px;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+  .feature-title {
+    margin-top: 1px;
+    font-size: 1.0rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .feature-description {
+    margin-top: 4px;
+    color: #7f8c8d;
+}
+.feature-description {
+    color: #7f8c8d;
+    line-height: 1;
+    font-size: 0.8rem;
+}
+.feature-card {
+  padding: 5px;
+  height: fit-content;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.features-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+.features-description {
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: #34495e;
+  line-height: 1.6;
+}
+  
+  /* Products section adjustments - UPDATED */
+  .artisan-product-gallery22 {
+    padding: 40px 10px; /* Reduced horizontal padding */
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .artisan-product-gallery22 h2.textc {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  /* Always show two products per row */
+  .artisan-product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 0 auto;
+    width: calc(100% - 10px); /* Slightly smaller than container */
+  }
+  
+  .artisan-product-card {
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  
+  .artisan-product-img {
+    height: 140px;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .artisan-product-info {
+    padding: 8px;
+  }
+  
+  .artisan-product-titleeee {
+    font-size: 14px;
+    margin: 0 0 2px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .artisan-product-brandddd {
+    font-size: 12px;
+    margin: 0 0 2px 0;
+  }
+  
+  .artisan-product-priceeee {
+    font-size: 16px;
+    margin: 2px 0 6px 0;
+  }
+  
+  .artisan-add-to-cart-btnn {
+    padding: 8px 0;
+    font-size: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .view-all-btn {
+    width: 80%;
+    padding: 12px 0;
+    margin: 20px auto 0;
+    display: block;
+  }
+  
+  /* Services section adjustments */
+  .services-section {
+    padding: 40px 15px;
+  }
+  
+  .services-title {
+    font-size: 20px;
+  }
+  .services-description {
+    margin-top: 16px;
+    font-size: 1rem;
+    color: #34495e;
+}
+
+.services-description {
+    margin: 30px auto;
+    font-size: 1rem;
+    color: #34495e;
+    line-height: 1;
+    max-width: 700px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.3s forwards;
+}
+.service-description {
+  margin-top: 16px;
+  color: #7f8c8d;
+  line-height: 1;
+  font-size: 12px;
+}
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .service-card {
+    padding: 2px;
+  }
+  
+  .service-title {
+    font-size: 15px;
+  }
+  .contact-description-unique {
+    margin-top: 16px;
+    font-size: 0.9rem;
+    color: #34495e;
+}
+.contact-info-title-unique {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 24px;
+}
+.contact-text-unique {
+  margin-left: 16px;
+  color: #7f8c8d;
+  font-size: 12px;
+}
+  .service-list li {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+  
+  /* Contact section adjustments */
+  .contact-section-unique {
+    padding: 40px 15px;
+  }
+  
+  .contact-title-unique {
+    font-size: 24px;
+  }
+  
+  .contact-grid-unique {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .contact-info-unique {
+    padding: 15px;
+  }
+  
+  .contact-form-unique {
+    padding: 15px;
+  }
+  
+  .form-input-unique, 
+  .form-textarea-unique {
+    padding: 10px;
+  }
+  
+  .form-button-unique {
+    width: 100%;
+    padding: 12px 0;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (max-width: 768px) and (orientation: landscape) {
+  .slideshow {
+    height: 100vh;
+  }
+  
+  .slide img {
+    height: 100vh;
+  }
+  
+  .overlay {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  /* About cards in landscape orientation */
+  .about-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .about-card {
+    width: calc(50% - 15px);
+    margin: 0;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+  
+  .features-grid,
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+/* Larger screens */
+@media (min-width: 769px) {
+  .about-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .about-card {
+    flex: 1;
+    min-width: 250px;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+}
+
+/* Extra small devices (phones, 576px and down) */
+@media (max-width: 576px) {
+  /* Even more compact navigation */
+  .navbarrr {
+    padding: 5px;
+  }
+  
+  .logoooo {
+    font-size: 18px;
+    margin-left: 0px; /* Add some left margin for better spacing on small screens */
+  }
+  
+  .logo-imgggg {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .nav-links {
+    display: none; /* Hide the links on very small screens */
+  }
+  
+  /* Show a dropdown menu button instead */
+  .nav-container:after {
+    content: "≡";
+    font-size: 24px;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    cursor: pointer;
+  }
+  
+  /* Further reduce login/signup buttons */
+  .login2, .signup2 {
+    padding: 6px 12px;
+    font-size: 13px;
+    min-width: 80px;
+  }
+  
+  /* IMPORTANT: Keep product grid as 2 columns even on small screens */
+  .artisan-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  
+  .artisan-product-img {
+    height: 120px;
+  }
+  
+  /* Make product details more compact */
+  .artisan-product-info {
+    padding: 6px;
+  }
+  
+  .artisan-product-titleeee {
+    font-size: 12px;
+    margin-bottom: 1px;
+  }
+  
+  .artisan-product-brandddd {
+    font-size: 10px;
+    margin-bottom: 1px;
+  }
+  
+  .artisan-product-priceeee {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  
+  .artisan-add-to-cart-btnn {
+    padding: 8px 0;
+    font-size: 11px;
+    min-height: 35px; /* Better touch target */
+  }
+  
+  /* Adjust dots indicator for smaller screens */
+  .dots-container {
+    bottom: 10px;
+  }
+  
+  .dot {
+    width: 8px;
+    height: 8px;
+    margin: 0 4px;
+  }
+}
+
+/* Medium-sized phones (iPhone Plus, Pixel, etc.) */
+@media (min-width: 375px) and (max-width: 576px) {
+  /* Show a 2-column product grid on medium phones */
+  .artisan-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  
+  .artisan-product-img {
+    height: 130px;
+  }
+  
+  /* More compact product info */
+  .artisan-product-titleeee {
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
+  
+  .artisan-product-brandddd {
+    font-size: 10px;
+    margin-top: 0;
+    margin-bottom: 2px;
+  }
+  
+  .artisan-product-priceeee {
+    font-size: 14px;
+    margin-top: 2px;
+    margin-bottom: 4px;
+  }
+}
+
+/* Smallest phones (iPhone SE, etc) */
+@media (max-width: 374px) {
+  .artisan-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+  
+  .artisan-product-img {
+    height: 110px;
+  }
+  
+  .artisan-product-info {
+    padding: 5px;
+  }
+  
+  .artisan-product-titleeee {
+    font-size: 11px;
+  }
+  
+  .artisan-product-brandddd {
+    font-size: 9px;
+  }
+  
+  .artisan-product-priceeee {
+    font-size: 13px;
+  }
+  
+  .artisan-add-to-cart-btnn {
+    padding: 6px 0;
+    font-size: 10px;
+  }
+}
+
+/* iPhone-specific adjustments */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) {
+  
+  /* Fix for the notch on newer iPhones */
+  .navbarrr {
+    padding-top: env(safe-area-inset-top);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+  
+  /* Fix login buttons for iPhone sizes */
+  .auth-buttons {
+    margin-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Needed to show nav links on larger screens */
+@media (min-width: 577px) {
+  .nav-links {
+    display: flex !important;
+  }
+}
+/* Responsive styling for trending products section */
+@media screen and (max-width: 768px) {
+  /* Products section adjustments */
+  .artisan-product-gallery22 {
+    padding: 0rem 0rem;
+    overflow: hidden;
+  }
+
+  .artisan-product-gallery22 .textc {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .artisan-product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.8rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .artisan-product-card {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 10px;
+  }
+
+  .artisan-product-img {
+    height: 180px !important;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .artisan-product-info {
+    padding: 0.6rem;
+  }
+
+  .artisan-product-titleeee {
+    font-size: 1rem !important;
+    margin: 0.3rem 0 !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .artisan-product-brandddd {
+    font-size: 0.8rem !important;
+    margin: 0.2rem 0 !important;
+  }
+
+  .artisan-product-priceeee {
+    font-size: 1rem !important;
+    margin: 0.3rem 0 !important;
+  }
+
+  .artisan-add-to-cart-btnn {
+    width: 90%;
+    padding: 0.4rem;
+    font-size: 0.9rem;
+    margin-left: 5% !important;
+    margin-right: 5% !important;
+    min-height: 4px; /* Better touch target */
+  }
+
+  .out-of-stock-badge {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.5rem;
+  }
+
+  .view-all-btn {
+    width: 60%;
+    padding: 6px 0;
+    margin: 20px auto 0;
+    display: block;
+    min-height: 44px;
+}
+
+
+  /* Loading and error states */
+  .loading-state,
+  .error-state,
+  .artisan-no-products {
+    font-size: 1rem;
+    padding: 1.5rem 1rem;
+    text-align: center;
+  }
+}
+
+/* Extra small devices (phones) */
+@media screen and (max-width: 480px) {
+  .artisan-product-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5rem;
+  }
+
+  .artisan-product-card {
+    margin: 5px;
+  }
+
+  .artisan-product-img {
+    height: 140px !important;
+  }
+
+  .artisan-product-info {
+    padding: 0.5rem;
+  }
+
+  .artisan-product-titleeee {
+    font-size: 0.8rem !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .artisan-product-brandddd {
+    font-size: 0.7rem !important;
+  }
+
+  .artisan-product-priceeee {
+    font-size: 0.85rem !important;
+    margin: 0.2rem 0 !important;
+  }
+
+  .artisan-add-to-cart-btnn {
+    width: 94%;
+    padding: 0.3rem;
+    font-size: 0.75rem;
+    margin-left: 3% !important;
+    margin-right: 3% !important;
+    min-height: 36px;
+  }
+}
+
+/* Very small phones */
+@media screen and (max-width: 374px) {
+  .artisan-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+  
+  .artisan-product-img {
+    height: 110px !important;
+  }
+  
+  .artisan-product-info {
+    padding: 5px;
+  }
+  
+  .artisan-product-titleeee {
+    font-size: 11px !important;
+  }
+  
+  .artisan-product-brandddd {
+    font-size: 9px !important;
+  }
+  
+  .artisan-product-priceeee {
+    font-size: 13px !important;
+  }
+  
+  .artisan-add-to-cart-btnn {
+    padding: 6px 0;
+    font-size: 10px;
+  }
+}
+
+/* For improved touch targets on mobile */
+@media screen and (max-width: 768px) {
+  .artisan-add-to-cart-btnn,
+  .view-all-btn {
+    min-height: 4px; /* Apple's recommended minimum touch target size */
+  }
+  
+  .artisan-product-card {
+    transition: transform 0.2s;
+  }
+  
+  .artisan-product-card:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Fix for hardware acceleration */
+@media screen and (max-width: 768px) {
+  .artisan-product-img,
+  .artisan-product-card,
+  .artisan-add-to-cart-btnn {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+  }
 }

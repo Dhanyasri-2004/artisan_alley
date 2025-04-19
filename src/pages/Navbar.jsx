@@ -14,7 +14,7 @@ const Navbar = ({ onSelectCategory }) => {
       {/* Left: Logo */}
       <div className="navbar-logo">
         <img src="/images/logo.png" alt="Website Logo" className="navbar-logo-img" />
-        <span className="navbar-logo-title">Artisan Alley</span>
+        <span className="navbar-logo-title">Indiart</span>
       </div>
 
       {/* Right: Home, Add Product, View Product */}

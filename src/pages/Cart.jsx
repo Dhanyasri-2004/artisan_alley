@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom"; // Import Link
+import { Link } from "react-router-dom";
 import "../styles/Cart.css";
 import Navbar1 from "./Navbar1";
+
 const getUserCart = async () => {
   const userId = localStorage.getItem("user_id");
-  if (!userId) throw new Error("User  ID not found in localStorage");
+  if (!userId) throw new Error("User ID not found in localStorage");
 
   try {
     const response = await fetch(`http://localhost:8080/api/cart/users/${userId}/cart`);
@@ -71,7 +72,7 @@ const Cart = () => {
     };
 
     fetchCart();
-  }, []); // Removed unnecessary dependency warning
+  }, []);
 
   const handleQuantityChange = async (productId, amount) => {
     const updatedItems = cartItems.map((item) =>
@@ -122,9 +123,9 @@ const Cart = () => {
 
   return (
     <div className="cart-container">
-            <div className="divv">
-            <Navbar1 />
-              </div>
+      <div className="divv">
+        <Navbar1 />
+      </div>
       <h2 className="cart-title">🛍️ Your Cart</h2>
       {cartItems.length === 0 ? (
         <p className="empty-cart">Your cart is empty.</p>
@@ -133,7 +134,7 @@ const Cart = () => {
           {cartItems.map((item) => (
             <div key={item.id} className="cart-item">
               <img
-                src={`/images/${item.imageName}`}
+                src={`http://localhost:8080/api/product/${item.id}/image`}
                 alt={item.name}
                 className="cart-item-image"
                 onError={(e) =>
@@ -166,7 +167,7 @@ const Cart = () => {
           ))}
           <div className="cart-total">
             <h3>Total: ₹{getTotalPrice().toLocaleString()}</h3>
-            <Link to="/addresspage" style={{ textDecoration: 'none' }}> {/* Add inline style to remove underline */}
+            <Link to="/addresspage" style={{ textDecoration: 'none' }}>
               <button className="checkout-btnnn">Proceed to Checkout</button>
             </Link>
           </div>

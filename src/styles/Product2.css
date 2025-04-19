@@ -802,3 +802,318 @@
   50% { opacity: 1; transform: scale(1.05); }
   100% { opacity: 0.7; transform: scale(1); }
 }
+/* Fixed Mobile CSS - Preventing Add to Cart Button Overlap */
+
+/* Original styles remain the same - only adding/modifying responsive sections */
+/* Responsive Design - Enhanced mobile optimization */
+@media (max-width: 1023px) {
+  .product-content {
+    grid-template-columns: 1fr;
+    gap: 30px; /* Reduced from 40px */
+    margin-top: 40px; /* Reduced from original */
+  }
+  
+  .product-main-image {
+    height: 400px; /* Reduced from 500px */
+  }
+  
+  .product-breadcrumb {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px; /* Reduced from 10px */
+    margin-bottom: 15px; /* Reduced from 20px */
+  }
+
+  .product-title {
+    font-size: 26px; /* Reduced from 32px */
+  }
+
+  .product-price {
+    font-size: 26px; /* Reduced from 30px */
+  }
+
+  .product-features {
+    gap: 15px; /* Reduced from 20px */
+    padding: 20px 0; /* Reduced from 24px */
+  }
+}
+
+@media (max-width: 767px) {
+  /* Container padding optimization */
+  .product-container {
+    padding: 0 10px; /* Reduced from 12px */
+    padding-top: 40px; /* Reduced from 60px */
+    padding-bottom: 70px; /* Reduced from 90px */
+    margin-top: 110px; /* Reduced from 100px */
+  }
+  
+  /* Main content layout */
+  .product-content {
+    gap: 12px; /* Reduced from 16px */
+    margin-bottom: 60px; /* Reduced from 80px */
+  }
+  
+  /* Product features optimization */
+  .product-features {
+    grid-template-columns: 1fr;
+    gap: 10px; /* Reduced from 16px */
+    margin-bottom: 50px; /* Reduced from 70px */
+    padding: 15px 0; /* Reduced padding */
+  }
+  
+  .feature {
+    padding: 6px; /* Reduced from 10px */
+    gap: 8px; /* Reduced from 12px */
+  }
+  
+  .feature-icon {
+    font-size: 20px; /* Reduced from 24px */
+  }
+  
+  .feature-text h4 {
+    font-size: 13px; /* Reduced from 14px */
+    margin: 0 0 2px 0; /* Reduced from 4px */
+  }
+  
+  .feature-text p {
+    font-size: 11px; /* Reduced from 12px */
+  }
+  
+  /* Action elements */
+  .product-actions {
+    height: 55px; /* Reduced from 60px */
+    padding: 8px 10px; /* Reduced from 10px 12px */
+  }
+  
+  /* Quantity selector optimization */
+  .quantity-selector {
+    height: 36px; /* Reduced from 40px */
+  }
+  
+  .quantity-btn {
+    width: 32px; /* Reduced from 36px */
+    height: 36px; /* Reduced from 40px */
+    font-size: 16px; /* Reduced from 18px */
+  }
+  
+  .quantity-input {
+    width: calc(100% - 64px); /* Adjusted for smaller buttons */
+    height: 36px; /* Reduced from 40px */
+    font-size: 13px; /* Reduced from 14px */
+  }
+  
+  /* Add to cart button optimization */
+  .add-to-cart-btn {
+    height: 36px; /* Reduced from 40px */
+    font-size: 13px; /* Reduced from 14px */
+    padding: 0 15px; /* Reduced from original */
+  }
+  
+  /* Out of stock button */
+  .out-of-stock-btn {
+    height: 36px; /* Reduced from 40px */
+    font-size: 13px; /* Reduced from 14px */
+  }
+  
+  /* Other mobile optimizations */
+  .product-gallery {
+    margin: 0 -10px; /* Match container padding */
+  }
+  
+  .product-main-image {
+    height: 240px; /* Reduced from 280px */
+  }
+  
+  .product-badge {
+    padding: 6px 12px; /* Reduced from 8px 16px */
+    font-size: 10px; /* Reduced from 12px */
+    top: 15px; /* Reduced from 20px */
+    right: 15px; /* Reduced from 20px */
+  }
+  
+  .product-title {
+    font-size: 16px; /* Reduced from 18px */
+    margin-bottom: 3px; /* Reduced from 4px */
+  }
+  
+  .product-brand {
+    font-size: 12px; /* Reduced from 13px */
+    margin-bottom: 5px; /* Reduced from 6px */
+  }
+  
+  .product-rating {
+    gap: 6px; /* Reduced from 8px */
+    margin-top: 8px; /* Reduced from 10px */
+  }
+  
+  .rating-stars {
+    gap: 2px; /* Reduced from 4px */
+  }
+  
+  .rating-count {
+    font-size: 12px; /* Reduced from 14px */
+  }
+  
+  .product-price {
+    font-size: 20px; /* Reduced from 22px */
+  }
+  
+  .product-price-container {
+    padding: 15px 0; /* Reduced from 20px */
+  }
+  
+  .product-stock {
+    gap: 6px; /* Reduced from 8px */
+    font-size: 12px; /* Reduced from 14px */
+  }
+  
+  .product-description h3 {
+    font-size: 15px; /* Reduced from 18px */
+    margin-bottom: 8px; /* Reduced from 12px */
+  }
+  
+  .product-description p {
+    font-size: 14px; /* Reduced from 16px */
+    line-height: 1.5; /* Reduced from 1.6 */
+  }
+  
+  .product-meta {
+    gap: 6px; /* Reduced from 8px */
+  }
+  
+  .meta-item {
+    gap: 6px; /* Reduced from 8px */
+    font-size: 12px; /* Reduced from 14px */
+  }
+  
+  .meta-label {
+    min-width: 90px; /* Reduced from 100px */
+  }
+  
+  /* Notifications optimization */
+  .product-notification {
+    bottom: 65px; /* Position above the fixed action bar */
+    padding: 8px; /* Reduced from 10px */
+    border-radius: 5px; /* Reduced from 6px */
+  }
+  
+  .notification-icon {
+    width: 20px; /* Reduced from 24px */
+    height: 20px; /* Reduced from 24px */
+    font-size: 12px; /* Reduced from 14px */
+  }
+  
+  .notification-message {
+    font-size: 12px; /* Reduced from 14px */
+  }
+  
+  .notification-content {
+    gap: 8px; /* Reduced from 12px */
+  }
+}
+
+/* Small phones specific adjustments */
+@media screen and (max-width: 374px) {
+  .product-container {
+    padding-top: 30px; /* Further reduced */
+    padding-bottom: 65px; /* Further reduced */
+  }
+  
+  .product-main-image {
+    height: 200px; /* Further reduced */
+  }
+  
+  .product-features {
+    margin-bottom: 45px; /* Further reduced */
+  }
+  
+  .product-title {
+    font-size: 15px; /* Further reduced */
+  }
+  
+      .product-price {
+        font-size: 12px;
+        margin-right: 20px;
+    }
+    .product-description {
+      margin-bottom: 10px;
+      animation: fadeIn 0.8s ease-out 0.4s both;
+      font-size: 12px;
+  }
+  
+  /* Make buttons more compact */
+  .add-to-cart-btn, .out-of-stock-btn {
+    font-size: 12px; /* Further reduced */
+    padding: 0 10px; /* Further reduced */
+  }
+  
+  .quantity-selector {
+    width: 28%; /* Reduced to make more space for CTA button */
+  }
+  
+  .add-to-cart-btn {
+    width: 72%; /* Increased to use available space */
+  }
+}
+
+/* Landscape orientation adjustments - improved compactness */
+@media screen and (max-width: 767px) and (orientation: landscape) {
+  .product-container {
+    padding-bottom: 60px; /* Reduced from 70px */
+    padding-top: 30px; /* Further reduced */
+  }
+  
+  .product-content {
+    margin-bottom: 45px; /* Reduced from 60px */
+    gap: 15px; /* Reduced from 20px */
+  }
+  
+  .product-gallery {
+    width: 40%; /* Reduced from 45% to give more space to content */
+  }
+  
+  .product-info {
+    width: 60%; /* Increased from 55% */
+    padding-left: 8px; /* Reduced from 10px */
+    gap: 10px; /* Reduced spacing between elements */
+  }
+  
+  .product-main-image {
+    height: 180px; /* Reduced for landscape mode */
+  }
+  
+  /* More compact product details */
+  .product-title {
+    font-size: 14px; /* Further reduced for landscape */
+    line-height: 1.2;
+  }
+  
+  .product-description p {
+    font-size: 12px; /* Further reduced */
+    line-height: 1.4; /* More compact */
+  }
+  
+  .product-features {
+    grid-template-columns: repeat(2, 1fr); /* Two columns in landscape */
+    gap: 8px; /* Very compact spacing */
+  }
+}
+
+/* Fix for Notch/Dynamic Island devices - adjusted for smaller content */
+@supports (padding-top: env(safe-area-inset-top)) {
+  .product-container {
+    padding-bottom: calc(70px + env(safe-area-inset-bottom)); /* Reduced from 90px */
+  }
+  
+  .product-features {
+    margin-bottom: calc(50px + env(safe-area-inset-bottom)); /* Reduced from 70px */
+  }
+  
+  .product-actions {
+    padding-bottom: calc(8px + env(safe-area-inset-bottom)); /* Reduced from 10px */
+  }
+  
+  .product-notification {
+    bottom: calc(60px + env(safe-area-inset-bottom)); /* Reduced from 70px */
+  }
+}

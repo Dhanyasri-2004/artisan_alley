@@ -363,35 +363,248 @@
     }
   }
   
-  @media (max-width: 768px) {
-    .admin-categories-content {
-      padding: 20px;
-      margin-left: 0;
-    }
-    
-    .sidebar {
-      width: 0;
-      transform: translateX(-100%);
-      transition: transform 0.3s ease;
-    }
-    
-    .sidebar.active {
-      width: 250px;
-      transform: translateX(0);
-    }
-    
-    .admin-categories-header {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 16px;
-    }
-    
-    .admin-categories-stats {
-      flex-direction: column;
-      gap: 16px;
-    }
-    
-    .admin-stat-card {
-      max-width: none;
-    }
+  /* Mobile Responsiveness for Categories Page */
+
+/* Base styles for all mobile devices */
+@media screen and (max-width: 767px) {
+  .admin-categories-container {
+    flex-direction: column;
   }
+  
+  /* Full-width collapsible sidebar */
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    max-height: 60px;
+    overflow: hidden;
+    padding: 15px;
+    z-index: 100;
+    transition: max-height 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar.expanded {
+    max-height: 100vh;
+  }
+  
+  .sidebar-toggle {
+    display: flex;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    cursor: pointer;
+  }
+  
+  /* Content area full-width */
+  .admin-categories-content {
+    margin-left: 0;
+    width: 100%;
+    padding: 16px;
+    height: auto;
+    max-width: 100%;
+  }
+  
+  /* Header adjustments */
+  .admin-categories-header {
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  
+  .admin-categories-header h1 {
+    font-size: 20px;
+    width: 100%;
+  }
+  
+  .admin-add-category-btn {
+    padding: 10px 16px;
+    font-size: 14px;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  /* Stats cards in mobile view - 2 per row */
+  .admin-categories-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  
+  .admin-categories-grid {
+    display: grid
+;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-right: 30px;
+    margin-left: 0px;
+}
+.admin-stat-card {
+  padding: 12px;
+  max-width: none;
+  width: 80%;
+  height: auto;
+}
+  
+  .admin-stat-icon {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .admin-stat-details h3 {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+  
+  .admin-stat-details p {
+    font-size: 12px;
+  }
+  
+  /* Full-width search bar */
+  .admin-categories-search {
+    margin-bottom: 16px;
+  }
+  
+  .search-container {
+    width: 80%;
+    max-width: 100%;
+}
+  
+  .search-container input {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .admin-category-card {
+    padding: 14px;
+    border-top-width: 4px;
+  }
+  
+  .admin-category-header {
+    margin-bottom: 12px;
+  }
+  
+  .admin-category-header h2 {
+    font-size: 15px;
+    font-weight: 600;
+    word-break: break-word;
+  }
+  
+  .admin-category-icon {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+  }
+  
+  .admin-category-details {
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  
+  .admin-category-stat {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .admin-category-stat .value {
+    font-size: 16px;
+  }
+  
+  .admin-category-stat .label {
+    font-size: 11px;
+    margin-top: 0;
+  }
+  
+  .admin-category-growth {
+    padding: 4px 8px;
+    font-size: 11px;
+    border-radius: 12px;
+  }
+}
+
+/* Specific styles for extra small phones */
+@media screen and (max-width: 380px) {
+  .admin-categories-content {
+    padding: 10px;
+  }
+  
+  .admin-categories-header h1 {
+    font-size: 18px;
+  }
+  
+  /* Smaller cards on very small screens */
+  .admin-category-card {
+    padding: 10px;
+  }
+  
+  .admin-category-header h2 {
+    font-size: 14px;
+  }
+  
+  .admin-category-icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .admin-category-stat .value {
+    font-size: 14px;
+  }
+  
+  .admin-category-stat .label {
+    font-size: 10px;
+  }
+  
+  .admin-category-growth {
+    padding: 3px 6px;
+    font-size: 10px;
+  }
+  
+  /* Ensure the loading and error states are properly sized */
+  .admin-categories-loading,
+  .admin-categories-error,
+  .admin-no-categories {
+    padding: 24px 16px;
+  }
+  
+  .spinner {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media screen and (max-width: 767px) and (orientation: landscape) {
+  .admin-categories-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .admin-stat-card {
+    flex-direction: row;
+  }
+  
+  .sidebar {
+    max-height: 50px;
+  }
+}
+
+/* iPhone SE and other very small devices */
+@media screen and (max-width: 320px) {
+  .admin-categories-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .admin-categories-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .admin-category-details {
+    flex-direction: row;
+  }
+}

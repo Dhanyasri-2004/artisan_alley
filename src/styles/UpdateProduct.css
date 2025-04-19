@@ -1,3 +1,6 @@
+body{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
 .update-product-container {
   display: grid;
   grid-template-columns: 250px 1fr; /* Sidebar width and remaining space for dashboard */
@@ -252,3 +255,182 @@ h1::after {
 /* For sequencing form elements, add this attribute to your HTML elements */
 /* Example: <label class="form-label" style="--index: 1;">Name</label> */
 /* Then increment the index for each subsequent element */
+/* Mobile Responsiveness for UpdateProduct Page */
+
+/* Base responsive layout changes */
+@media screen and (max-width: 768px) {
+  .update-product-container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .sidebar1 {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .center-container {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    padding-top: 0.5rem;
+  }
+
+  h1::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .form-label h6 {
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .form-control, .form-select {
+    font-size: 0.95rem;
+    padding: 0.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .btn-primary {
+    width: 100%;
+    padding: 0.6rem;
+  }
+
+  /* Fix grid layout for form elements */
+  .row.g-3 {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .col-md-6, .col-md-4, .col-md-8, .col-5, .col-12 {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Enhance image preview area for mobile */
+  img {
+    height: 140px !important;
+    width: 100% !important;
+    object-fit: contain !important;
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+  }
+}
+
+/* Extra small devices (phones, 576px and down) */
+@media screen and (max-width: 576px) {
+  .center-container {
+    padding: 0.75rem;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  .form-label h6 {
+    font-size: 0.9rem;
+  }
+
+  /* Compact form styling */
+  form.row.g-3.pt-5 {
+    padding-top: 1rem !important;
+  }
+
+  .form-check {
+    margin-bottom: 1rem;
+  }
+
+  .col-md-6, .col-md-4, .col-md-8, .col-5, .col-12 {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Make buttons more thumb-friendly */
+  .btn-primary {
+    padding: 0.7rem;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+    border-radius: 4px;
+  }
+
+  /* Image area styling */
+  img {
+    height: 120px !important;
+  }
+}
+
+/* iPhone SE and other very small devices */
+@media screen and (max-width: 375px) {
+  .center-container {
+    padding: 0.6rem;
+  }
+
+  h1 {
+    font-size: 1.1rem;
+  }
+
+  .form-label h6 {
+    font-size: 0.85rem;
+  }
+
+  .form-control, .form-select {
+    font-size: 0.9rem;
+  }
+
+  img {
+    height: 100px !important;
+  }
+}
+
+/* Enhance touch targets for better mobile usability */
+@media (hover: none) and (pointer: coarse) {
+  .form-control, .form-select, .btn-primary {
+    min-height: 44px; /* Apple's recommended minimum touch target size */
+  }
+
+  .form-check-input {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Add some spacing for easier touch interaction */
+  .form-check-label {
+    padding-left: 0.25rem;
+    padding-top: 0.15rem;
+  }
+}
+
+/* Fix for mobile keyboards pushing content */
+@media screen and (max-height: 600px) {
+  .update-product-container {
+    min-height: auto;
+  }
+}
+
+
+/* Add persistent submit button for better UX */
+@media screen and (max-width: 768px) {
+  .col-12:last-child {
+    position: sticky;
+    bottom: 0;
+    background-color: rgba(249, 250, 251, 0.9);
+    padding: 0.75rem 0;
+    margin: 0;
+    z-index: 10;
+  }
+
+  .btn-primary {
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  }
+}

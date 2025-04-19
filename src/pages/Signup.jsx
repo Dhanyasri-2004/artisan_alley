@@ -42,7 +42,7 @@ const Signup = () => {
       <div className="login-container">
         <h2 className="logo-container5">
           <img src="/images/logo.png" alt="Artisan Alley Logo" className="logo5" />
-          <span className="txt"> Welcome to Artisan Alley</span>
+          <span className="txt"> Welcome to Indiart</span>
         </h2>
         {error && <p className="error-message">{error}</p>}
         <form onSubmit={handleSubmit}>

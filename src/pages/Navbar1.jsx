@@ -13,7 +13,6 @@ const Navbar1 = ({ onSelectCategory, onSearchResults }) => {
   const [searchResults, setSearchResults] = useState([]);
   const [showSearchResults, setShowSearchResults] = useState(false);
   const [noResults, setNoResults] = useState(false);
-  // Removed the unused 'products' state variable
   const [allProductsWithImages, setAllProductsWithImages] = useState([]);
   const searchRef = useRef(null);
   const categoryRef = useRef(null);
@@ -97,12 +96,22 @@ const Navbar1 = ({ onSelectCategory, onSearchResults }) => {
   const handleSearchChange = (value) => {
     setSearchInput(value);
     if (value.trim().length > 0) {
-      // Filter products locally based on search input
-      const filteredProducts = allProductsWithImages.filter(product => 
-        product.name.toLowerCase().includes(value.toLowerCase()) ||
-        product.brand.toLowerCase().includes(value.toLowerCase()) ||
-        product.category.toLowerCase().includes(value.toLowerCase())
-      );
+      // Enhanced search functionality - filter products by name, brand, category, description, and price
+      const searchTerm = value.toLowerCase();
+      const filteredProducts = allProductsWithImages.filter(product => {
+        // Search in text fields
+        const matchesText = 
+          product.name.toLowerCase().includes(searchTerm) ||
+          product.brand.toLowerCase().includes(searchTerm) || 
+          product.category.toLowerCase().includes(searchTerm) ||
+          (product.description && product.description.toLowerCase().includes(searchTerm));
+        
+        // Search by price - check if search term is a number that matches the price
+        const isNumeric = !isNaN(searchTerm) && !isNaN(parseFloat(searchTerm));
+        const matchesPrice = isNumeric && product.price.toString().includes(searchTerm);
+        
+        return matchesText || matchesPrice;
+      });
       
       setSearchResults(filteredProducts);
       setShowSearchResults(true);
@@ -120,12 +129,22 @@ const Navbar1 = ({ onSelectCategory, onSearchResults }) => {
 
   const handleSearchClick = () => {
     if (searchInput.trim() !== "") {
-      // Filter products locally based on search input
-      const filteredProducts = allProductsWithImages.filter(product => 
-        product.name.toLowerCase().includes(searchInput.toLowerCase()) ||
-        product.brand.toLowerCase().includes(searchInput.toLowerCase()) ||
-        product.category.toLowerCase().includes(searchInput.toLowerCase())
-      );
+      // Enhanced search functionality for search button click
+      const searchTerm = searchInput.toLowerCase();
+      const filteredProducts = allProductsWithImages.filter(product => {
+        // Search in text fields
+        const matchesText = 
+          product.name.toLowerCase().includes(searchTerm) ||
+          product.brand.toLowerCase().includes(searchTerm) || 
+          product.category.toLowerCase().includes(searchTerm) ||
+          (product.description && product.description.toLowerCase().includes(searchTerm));
+        
+        // Search by price - check if search term is a number that matches the price
+        const isNumeric = !isNaN(searchTerm) && !isNaN(parseFloat(searchTerm));
+        const matchesPrice = isNumeric && product.price.toString().includes(searchTerm);
+        
+        return matchesText || matchesPrice;
+      });
       
       setSearchResults(filteredProducts);
       setNoResults(filteredProducts.length === 0);
@@ -179,27 +198,25 @@ const Navbar1 = ({ onSelectCategory, onSearchResults }) => {
       {/* Left Section - Logo */}
       <div className="nav-left">
         <img src="/images/logo.png" alt="Artisan Alley Logo" className="nav-logo" />
-        <span className="nav-brand">Artisan Alley</span>
+        <span className="nav-brand">Indiart</span>
       </div>
 
       <div className="nav-search" ref={searchRef}>
-  <div className="nav-search-wrapper">
-    <input
-      type="text"
-      placeholder="Search for products..."
-      value={searchInput}
-      onChange={(e) => handleSearchChange(e.target.value)}
-      className="nav-search-input"
-      onFocus={() => {
-        if (searchInput.trim() !== "" && searchResults.length > 0) {
-          setShowSearchResults(true);
-        }
-      }}
-    />
-    <FaSearch className="search-icon" />
-  </div>
-
-        
+        <div className="nav-search-wrapper">
+          <input
+            type="text"
+            placeholder="Search for products, brands, descriptions or price..."
+            value={searchInput}
+            onChange={(e) => handleSearchChange(e.target.value)}
+            className="nav-search-input"
+            onFocus={() => {
+              if (searchInput.trim() !== "" && searchResults.length > 0) {
+                setShowSearchResults(true);
+              }
+            }}
+          />
+          <FaSearch className="search-icon" onClick={handleSearchClick} />
+        </div>
 
         {/* Search Results Dropdown */}
         {showSearchResults && (
@@ -211,6 +228,7 @@ const Navbar1 = ({ onSelectCategory, onSearchResults }) => {
                     <div className="search-product-info">
                       <span className="product-name">{product.name}</span>
                       <span className="product-category">{product.category}</span>
+                      <span className="product-description">{product.description?.substring(0, 30)}{product.description?.length > 30 ? '...' : ''}</span>
                     </div>
                     <span className="product-price">₹{product.price}</span>
                   </Link>

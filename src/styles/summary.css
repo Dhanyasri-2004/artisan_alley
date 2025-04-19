@@ -300,3 +300,373 @@
 .highlight-total {
   animation: highlightPulse 2s ease-in-out;
 }
+/* Mobile Responsiveness for Artisan Summary Page */
+
+/* Base Mobile Media Query */
+@media only screen and (max-width: 767px) {
+  /* Layout adjustments */
+  .page-wrapper {
+    flex-direction: column;
+    height: auto;
+    overflow-x: hidden;
+  }
+
+  /* Sidebar transforms into a top navigation bar */
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    border-right: none;
+    border-bottom: 2px solid #a277ba;
+    max-height: 60px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .sidebar.expanded {
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+
+  /* Hamburger menu for sidebar */
+  .sidebar-toggle {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 1001;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #a277ba;
+  }
+
+  /* Main content adjustments */
+  .summary-content {
+    margin-left: 0;
+    width: 100%;
+    padding: 1rem;
+    height: auto;
+    max-height: none;
+    overflow-y: visible;
+  }
+
+  /* Headings */
+  .main-heading {
+    font-size: 20px;
+    margin-bottom: 1.2rem;
+    padding-top: 10px;
+  }
+
+  .main-heading:after {
+    bottom: -8px;
+    height: 2px;
+  }
+
+  @keyframes expandLine {
+    from {
+      width: 0;
+    }
+    to {
+      width: 80px;
+    }
+  }
+
+  /* Table wrapper adjustments */
+  .table-wrapper {
+    max-height: none;
+    box-shadow: 0 2px 8px rgba(162, 119, 186, 0.15);
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+  }
+
+  /* Table adjustments */
+  .attendance-table {
+    min-width: 100%;
+    font-size: 14px;
+  }
+
+  .attendance-table th {
+    padding: 10px 8px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .attendance-table td {
+    padding: 8px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  /* Adjust status message */
+  .status-msg {
+    font-size: 14px;
+    padding: 12px;
+    margin: 15px 0;
+  }
+
+  /* Summary footer */
+  .summary-footer {
+    padding: 0 10px;
+  }
+}
+
+/* Extra Small Devices (iPhone SE, smaller phones) */
+@media only screen and (max-width: 375px) {
+  .attendance-table th,
+  .attendance-table td {
+    padding: 6px 4px;
+    font-size: 12px;
+  }
+
+  .main-heading {
+    font-size: 18px;
+  }
+
+  /* Optimize earnings display for small screens */
+  .attendance-table td:last-child {
+    font-size: 13px;
+  }
+  
+  /* Further reduce horizontal padding */
+  .summary-content {
+    padding: 0.8rem;
+  }
+}
+
+/* Handle table overflow better on mobile */
+@media only screen and (max-width: 767px) {
+  /* Create horizontal scroll for table if needed */
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -10px;
+    padding: 0 10px;
+    width: calc(100% + 20px);
+  }
+  
+  /* Add indicator for horizontal scroll */
+  .table-wrapper:after {
+    content: '← Scroll →';
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    color: #a277ba;
+    opacity: 0.7;
+    padding: 5px 0;
+    animation: fadeInOut 2s infinite;
+  }
+  
+  @keyframes fadeInOut {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.7; }
+  }
+}
+
+/* Optimize animations for mobile */
+@media only screen and (max-width: 767px) {
+  /* Simplify animations to improve performance */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideInDown {
+    from { 
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from { 
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Make staggered row animations faster */
+  .attendance-table tr:nth-child(1) { animation-delay: 0.05s; }
+  .attendance-table tr:nth-child(2) { animation-delay: 0.1s; }
+  .attendance-table tr:nth-child(3) { animation-delay: 0.15s; }
+  .attendance-table tr:nth-child(4) { animation-delay: 0.2s; }
+  .attendance-table tr:nth-child(5) { animation-delay: 0.25s; }
+  
+  /* Highlight effect optimization */
+  .highlight-total {
+    animation: highlightPulse 1.5s ease-in-out;
+  }
+}
+
+/* Add tap highlight and improve touch experience */
+@media only screen and (max-width: 767px) {
+  .attendance-table tr {
+    -webkit-tap-highlight-color: rgba(162, 119, 186, 0.1);
+  }
+  
+  /* Increase touch target for rows */
+  .attendance-table td {
+    min-height: 44px;
+  }
+}
+
+/* Add bottom navigation bar */
+@media only screen and (max-width: 767px) {
+  .mobile-bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    box-shadow: 0 -2px 10px rgba(162, 119, 186, 0.2);
+    justify-content: space-around;
+    align-items: center;
+    z-index: 999;
+    border-top: 1px solid #f0e6f5;
+  }
+
+  .mobile-bottom-nav .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    width: 25%;
+    height: 100%;
+    text-decoration: none;
+    font-size: 12px;
+  }
+
+  .mobile-bottom-nav .nav-item.active {
+    color: #a277ba;
+  }
+
+  .mobile-bottom-nav .nav-icon {
+    font-size: 22px;
+    margin-bottom: 4px;
+  }
+
+  /* Add padding to bottom of content to prevent overlap with bottom nav */
+  .summary-content {
+    padding-bottom: 70px;
+  }
+}
+
+/* Optimize the counting animation display for mobile */
+@media only screen and (max-width: 767px) {
+  .count-animation {
+    font-weight: bold;
+    color: #a277ba;
+  }
+  
+  /* Better visual feedback for the earnings numbers */
+  .highlight-total {
+    position: relative;
+  }
+  
+  .highlight-total:after {
+    content: '✓';
+    position: absolute;
+    font-size: 10px;
+    top: 2px;
+    right: 2px;
+    color: green;
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  @keyframes popIn {
+    from {
+      opacity: 0;
+      transform: scale(0);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+/* Add portrait and landscape optimizations */
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  .sidebar {
+    max-height: 50px;
+  }
+  
+  .main-heading {
+    margin-bottom: 0.8rem;
+  }
+  
+  /* Stack table headers in landscape to ensure better readability */
+  .table-wrapper {
+    max-height: calc(100vh - 180px);
+    overflow-y: auto;
+  }
+}
+
+/* Optimize table width on different devices */
+@media only screen and (max-width: 480px) {
+  /* Optimize column widths */
+  .attendance-table th:nth-child(1), 
+  .attendance-table td:nth-child(1) {
+    width: 10%;
+  }
+  
+  .attendance-table th:nth-child(2), 
+  .attendance-table td:nth-child(2) {
+    width: 30%;
+  }
+  
+  .attendance-table th:nth-child(3), 
+  .attendance-table td:nth-child(3) {
+    width: 25%;
+  }
+  
+  .attendance-table th:nth-child(4), 
+  .attendance-table td:nth-child(4) {
+    width: 35%;
+  }
+}
+
+/* Add app-like pull-to-refresh indicator */
+@media only screen and (max-width: 767px) {
+  .pull-to-refresh {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a277ba;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    margin-top: -10px;
+  }
+
+  .pull-to-refresh.visible {
+    opacity: 1;
+  }
+
+  .pull-indicator {
+    width: 30px;
+    height: 30px;
+    border: 2px solid rgba(162, 119, 186, 0.3);
+    border-top-color: #a277ba;
+    border-radius: 50%;
+    margin-right: 10px;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

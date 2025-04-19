@@ -409,3 +409,180 @@
     visibility: hidden;
   }
 }
+@media screen and (max-width: 768px) {
+  /* Main container */
+  .address-page {
+    padding: 0.5rem;
+    margin-top: 26px;
+  }
+  
+  /* Page title */
+  .page-titleeee {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
+  
+  .page-titleeee::after {
+    width: 60px;
+    height: 3px;
+    bottom: -8px;
+  }
+  
+  /* Section containers */
+  .section {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--shadow);
+  }
+  
+  .section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.3rem;
+  }
+  
+  /* Address cards */
+  .address-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.3rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .address-card input[type="radio"] {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+  
+  .address-card label {
+    padding: 0.3rem 0;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+  
+  .address-actions {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+  }
+  
+  .edit-btn, .delete-btn {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.8rem;
+    width: 48%;
+    text-align: center;
+  }
+  
+  /* Form inputs */
+  .address-form {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  
+  .address-form input, 
+  .address-form select {
+    padding: 0.3rem;
+    font-size: 0.9rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .submit-btn {
+    padding: 0.7rem;
+    font-size: 0.8rem;
+    height: auto;
+    width: fit-content;
+}
+  /* Payment options */
+  .payment-options {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  
+  .payment-option {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  .place-order-button {
+    max-width: 50%;
+    padding: 0.4rem;
+    font-size: 1rem;
+    margin: 1.5rem auto;
+}
+}
+
+/* Extra small devices (iPhone SE, small Android phones) */
+@media screen and (max-width: 375px) {
+  .address-page {
+    padding: 0.4rem;
+  }
+  
+  .page-titleeee {
+    font-size: 1.3rem;
+  }
+  
+  .section h2 {
+    font-size: 1.1rem;
+  }
+  
+  .address-card label {
+    font-size: 0.85rem;
+    line-height: 1.3;
+  }
+  
+  .edit-btn, .delete-btn {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.75rem;
+  }
+  
+  .payment-option {
+    padding: 0.3rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Fix for iPhone notch and bottom bar */
+@supports (padding: max(0px)) {
+  .address-page {
+    padding-left: max(0.5rem, env(safe-area-inset-left));
+    padding-right: max(0.5rem, env(safe-area-inset-right));
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+  
+  .navvvv {
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  .place-order-button {
+    margin-bottom: max(2rem, env(safe-area-inset-bottom) + 1rem);
+  }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) {
+  .address-card,
+  .edit-btn, 
+  .delete-btn,
+  .submit-btn,
+  .payment-option,
+  .place-order-button {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .address-card input[type="radio"],
+  .payment-option input[type="radio"] {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .edit-btn, 
+  .delete-btn,
+  .submit-btn,
+  .place-order-button {
+    min-height: 44px; /* Apple's recommended minimum touch target size */
+  }
+}

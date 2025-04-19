@@ -1,3 +1,6 @@
+body{
+  font-family: Georgia, 'Times New Roman', Times, serif !important;
+}
 .user-orders-container {
   max-width: 1000px;
   margin: 100px auto 50px auto; /* Push down to avoid overlapping navbar */
@@ -122,4 +125,128 @@
   display: flex;
   align-items: center;
   gap: 6px;
+}
+
+/* Mobile Responsiveness for UserOrders Component */
+
+/* Base responsive container adjustments */
+@media screen and (max-width: 768px) {
+  .user-orders-container {
+    margin: 70px auto 30px auto;
+    padding: 20px 15px;
+  }
+  
+  .orders-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .no-orders-msg {
+    font-size: 1rem;
+  }
+}
+
+/* Small mobile devices (iPhone SE, small Android phones) */
+@media screen and (max-width: 375px) {
+  .user-orders-container {
+    padding: 15px 10px;
+    margin-top: 60px;
+  }
+  
+  .orders-title {
+    font-size: 1.3rem;
+  }
+}
+
+/* Order box responsive styling */
+@media screen and (max-width: 768px) {
+  .order-box {
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 60px;
+  }
+  
+  .order-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .order-status {
+    align-self: flex-start;
+    font-size: 0.8rem;
+    padding: 4px 10px;
+  }
+  
+  .item-name {
+    font-size: 0.95rem;
+  }
+  
+  .item-meta {
+    font-size: 0.85rem;
+  }
+  
+  .meta-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 15px;
+    font-size: 0.9rem;
+  }
+  
+  .order-total {
+    align-self: flex-end;
+    margin-top: 5px;
+  }
+}
+
+/* Fix order status icon alignment on mobile */
+@media screen and (max-width: 768px) {
+  .order-info, .order-status {
+    display: flex;
+    align-items: center;
+  }
+  
+  .order-date, .order-address {
+    font-size: 0.85rem;
+  }
+}
+
+/* Order items section adjustments for mobile */
+@media screen and (max-width: 768px) {
+  .items-section {
+    padding-top: 12px;
+    margin-top: 8px;
+  }
+  
+  .item {
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+/* Specific adjustments for very small screens */
+@media screen and (max-width: 320px) {
+  .order-info span {
+    font-size: 0.85rem;
+  }
+  
+  .item-name {
+    font-size: 0.9rem;
+  }
+  
+  .item-meta {
+    font-size: 0.8rem;
+  }
+  
+  .order-status {
+    padding: 3px 8px;
+  }
 }

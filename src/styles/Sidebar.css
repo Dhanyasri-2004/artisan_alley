@@ -46,7 +46,6 @@ body {
 /* Main Container */
 .unique-app-container {
   display: flex;
-  min-height: 100vh;
   background-color: #f7fafc; /* bg-gray-100 */
 }
 
@@ -57,6 +56,8 @@ body {
   transition: width 0.3s ease-in-out;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* shadow-lg */
   position: relative;
+  height: 100vh;
+  z-index: 1001; /* Ensure sidebar is above other content */
 }
 
 .unique-sidebar.collapsed {
@@ -74,6 +75,7 @@ body {
   padding: 0.25rem; /* p-1 */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* shadow-lg */
   transition: background-color 0.3s;
+  z-index: 1002; /* Above sidebar */
 }
 
 .unique-toggle-button:hover {
@@ -166,4 +168,168 @@ body {
   color: #4b5563;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: medium;
+}
+
+/* Mobile Responsiveness for Sidebar */
+
+/* Mobile Responsive Styles for Sidebar */
+
+/* Main container structure */
+@media (max-width: 767px) {
+  /* Overall app container adjustment */
+
+  .unique-app-container {
+
+    overflow-x: hidden;
+}
+
+.unique-app-container {
+display: flex
+;
+/* min-height: 100vh; */
+background-color: #f7fafc;
+}
+  /* Transform sidebar to top navigation */
+  .unique-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: auto;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    background-color: #ffffff;
+    padding: 0.25rem 0;
+  }
+
+  /* Hide logo container on mobile */
+  .unique-logo-container {
+    display: none;
+  }
+
+  /* Hide toggle button on mobile */
+  .unique-toggle-button {
+    display: none;
+  }
+
+  /* Nav takes full width */
+  .unique-nav {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+  }
+
+  .unique-nav::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome/Safari */
+  }
+
+  /* Make nav list horizontal */
+  .unique-nav-list {
+    display: flex;
+    padding: 0.5rem;
+    margin: 0;
+    justify-content: space-between;
+  }
+
+  /* Adjust nav items for horizontal layout */
+  .unique-nav-item {
+    margin: 0;
+    flex: 0 0 auto;
+    max-width: 4rem;
+    min-width: 3.5rem;
+  }
+
+  /* Style nav links for mobile */
+  .unique-nav-link {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    padding: 0.5rem 0.25rem;
+    border-radius: 0.5rem;
+    text-align: center;
+  }
+
+  /* Make icons slightly smaller */
+  .unique-nav-link span:first-child svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Style text labels */
+  .unique-nav-link span.font-medium {
+    font-size: 0.65rem;
+    line-height: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+
+  /* Style logout button to match other items */
+  .logout-button {
+    background: none;
+    border: none;
+    width: 100%;
+    font-size: 0.65rem;
+    color: #4b5563;
+  }
+
+  /* Create space for fixed top nav */
+  body {
+    padding-top: 4rem; /* Reduced from 5rem */
+    margin: 0;
+  }
+
+  /* Active nav link highlight */
+  .unique-nav-link.active {
+    background-color: #f3eaf6;
+    color: #a277ba;
+  }
+}
+
+/* Fix for small screens like iPhone SE */
+@media (max-width: 375px) {
+  .unique-nav-item {
+    min-width: 3rem;
+    max-width: 3.5rem;
+  }
+
+  .unique-nav-link {
+    padding: 0.4rem 0.2rem;
+  }
+
+  .unique-nav-link span:first-child svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .unique-nav-link span.font-medium {
+    font-size: 0.6rem;
+  }
+  
+  body {
+    padding-top: 3.5rem; /* Reduced padding for smaller screens */
+  }
+}
+
+/* Landscape orientation adjustment */
+@media (max-width: 767px) and (orientation: landscape) {
+  .unique-nav-list {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .unique-nav-item {
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding: 0.25rem;
+  }
+
+  body {
+    padding-top: 5rem; /* Adjusted for landscape */
+  }
 }

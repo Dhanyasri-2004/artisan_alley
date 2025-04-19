@@ -123,3 +123,160 @@ body {
   .button .continue-shopping:hover {
     background-color: #935bb1;
   }
+  /* Responsive CSS for OrderPlaced page on mobile devices */
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0.75rem;
+  }
+  
+  .card {
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    max-width: 100%;
+  }
+  
+  .success-icon .relative {
+    transform: scale(0.9);
+  }
+  
+  .success-message h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .success-message p {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .order-details {
+    margin-top: 1.5rem;
+  }
+  
+  .order-id {
+    padding: 0.75rem;
+  }
+  
+  .timeline-line {
+    left: 1.25rem;
+  }
+  
+  .timeline-icon {
+    width: 2.5rem;
+  }
+  
+  .timeline-item {
+    margin-bottom: 1.5rem;
+  }
+  
+  .timeline-content {
+    margin-left: 0.5rem;
+  }
+  
+  .timeline-content p.font-medium {
+    font-size: 0.95rem;
+  }
+  
+  .timeline-content p.text-sm {
+    font-size: 0.8rem;
+  }
+  
+  .button {
+    margin-top: 1.5rem;
+  }
+  
+  .button .continue-shopping {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Extra small devices (phones under 480px) */
+@media screen and (max-width: 480px) {
+  .card {
+    padding: 1.25rem;
+  }
+  
+  .success-icon .w-20 {
+    width: 4rem;
+    height: 4rem;
+  }
+  
+  .success-message h1 {
+    font-size: 1.3rem;
+  }
+  
+  .success-message p {
+    font-size: 0.85rem;
+  }
+  
+  .timeline-line {
+    left: 1rem;
+  }
+  
+  .timeline-icon {
+    width: 2rem;
+  }
+  
+  .timeline-icon .w-6 {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  
+  .timeline-content {
+    width: calc(100% - 2.5rem);
+  }
+  
+  .timeline-content p.font-medium {
+    font-size: 0.9rem;
+  }
+  
+  .timeline-content p.text-sm {
+    font-size: 0.75rem;
+  }
+}
+
+/* For devices with notches (iPhone X and newer) */
+@supports (padding: max(0px)) {
+  .container {
+    padding-left: max(0.75rem, env(safe-area-inset-left));
+    padding-right: max(0.75rem, env(safe-area-inset-right));
+    padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+  }
+}
+
+/* Portrait orientation adjustments */
+@media screen and (max-width: 768px) and (orientation: portrait) {
+  .container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  .card {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Animation optimizations for mobile */
+@media screen and (max-width: 768px) {
+  .success-icon.scale-up {
+    transform: scale(0.9);
+    transition: transform 0.5s, opacity 0.5s;
+  }
+  
+  .success-message.visible,
+  .order-details.visible {
+    transition: transform 0.5s, opacity 0.5s;
+  }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) {
+  .button .continue-shopping {
+    min-height: 44px; /* Apple's recommended minimum touch target size */
+    -webkit-tap-highlight-color: transparent;
+  }
+}

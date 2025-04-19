@@ -56,7 +56,7 @@ const Login = () => {
       <div className="login-box">  
         <div className="logo-containerrrr">
           <img src="/images/logo.png" alt="Artisan Alley Logo" className="logo2" />
-          <h2>Welcome to Artisan Alley</h2>
+          <h2>Welcome to Indiart</h2>
         </div>
         {error && <p className="error-message">{error}</p>}
         <form onSubmit={handleLogin}>

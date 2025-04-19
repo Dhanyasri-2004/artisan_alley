@@ -179,19 +179,17 @@ const Home = () => {
         <nav className="navbarrr">
           <div className="logoooo">
             <img src="/images/logo.png" alt="Artisan Alley Logo" className="logo-imgggg" />
-            Artisan Alley
+            Indiart
           </div>
           <div className="nav-container">
           <ul className="nav-links">
   <li><button onClick={() => document.getElementById('about').scrollIntoView({ behavior: 'smooth' })}>Home</button></li>
-  <li><button onClick={() => document.getElementById('features').scrollIntoView({ behavior: 'smooth' })}>Services</button></li>
-  <li><button onClick={() => document.getElementById('trending').scrollIntoView({ behavior: 'smooth' })}>Products</button></li>
-  <li><button onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>Contact</button></li>
   <li><button onClick={() => document.getElementById('about').scrollIntoView({ behavior: 'smooth' })}>About</button></li>
+  <li><button onClick={() => document.getElementById('trending').scrollIntoView({ behavior: 'smooth' })}>Products</button></li>
+  <li><button onClick={() => document.getElementById('features').scrollIntoView({ behavior: 'smooth' })}>Services</button></li>
+  <li><button onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>Contact</button></li>
 </ul>
-            <button className="artisan-btn" onClick={() => navigate("/signup1")}>
-              Artisan
-            </button>
+
           </div>
         </nav>
       </header>

@@ -353,3 +353,292 @@
     min-width: 600px;
   }
 }
+/* Mobile Responsiveness for Artisans Page */
+
+/* Base styles for tablets and smaller devices */
+@media screen and (max-width: 992px) {
+  .admin-artisan-container {
+    flex-direction: row;
+  }
+  
+  .sidebar {
+    width: 220px;
+    transition: all 0.3s ease;
+  }
+  
+  .admin-artisan-content {
+    margin-left: 220px;
+    width: calc(100% - 220px);
+    padding: 24px;
+  }
+  
+  .admin-artisan-title {
+    font-size: 24px;
+  }
+  
+  .admin-stats {
+    flex-wrap: wrap;
+  }
+}
+
+/* Medium screens (tablet portrait) */
+@media screen and (max-width: 768px) {
+  .admin-artisan-container {
+    height: auto;
+    overflow: visible;
+  }
+  
+  /* Left-aligned sidebar with toggle functionality */
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    max-height: 60px;
+    overflow: hidden;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Left alignment */
+    transition: max-height 0.3s ease;
+    z-index: 100;
+  }
+  
+  .sidebar.expanded {
+    max-height: 100vh;
+  }
+  
+  /* Left-aligned toggle button */
+  .sidebar-toggle {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+    cursor: pointer;
+    z-index: 101;
+  }
+  
+  /* Content area adjustments */
+  .admin-artisan-content {
+    margin-left: 0;
+    width: 100%;
+    padding: 16px;
+    height: auto;
+  }
+  
+  .admin-artisan-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+  }
+  
+  .admin-artisan-title::after {
+    width: 50px;
+    height: 3px;
+  }
+  
+  .admin-artisan-controls {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .admin-search-box {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .admin-stats {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  
+  .admin-stat-card {
+    flex: 1;
+    min-width: 140px;
+    padding: 10px 16px;
+  }
+  
+  .admin-stat-card span {
+    font-size: 16px;
+  }
+  
+  .admin-stat-card p {
+    font-size: 12px;
+  }
+  
+  /* Table scrolling for mobile */
+  .admin-artisan-table-container {
+    overflow-x: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  }
+  
+  .admin-artisan-table {
+    min-width: 500px;
+  }
+  
+  .admin-artisan-table th,
+  .admin-artisan-table td {
+    padding: 12px;
+    font-size: 14px;
+  }
+  
+  .admin-artisan-avatar {
+    width: 34px;
+    height: 34px;
+    font-size: 14px;
+  }
+  
+  .admin-no-results {
+    padding: 32px 16px;
+  }
+  
+  .admin-no-results h3 {
+    font-size: 16px;
+  }
+}
+
+/* Small mobile phones */
+@media screen and (max-width: 576px) {
+  .admin-artisan-content {
+    padding: 12px;
+  }
+  
+  .admin-artisan-title {
+    font-size: 20px;
+  }
+  
+  .admin-artisan-controls {
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  
+  .admin-search-box {
+    padding: 0 12px;
+  }
+  
+  .admin-search-box input {
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  .admin-stats {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .admin-stat-card {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .admin-artisan-table {
+    min-width: 450px;
+  }
+  
+  .admin-artisan-table th,
+  .admin-artisan-table td {
+    padding: 10px;
+    font-size: 13px;
+  }
+  
+  .admin-artisan-skill {
+    padding: 4px 10px;
+    font-size: 12px;
+  }
+  
+  .admin-artisan-avatar {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+  
+  .admin-loading {
+    padding: 40px 0;
+  }
+  
+  .admin-spinner {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .admin-no-results {
+    padding: 24px 12px;
+  }
+  
+  .admin-no-results svg {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Very small mobile phones */
+@media screen and (max-width: 380px) {
+  .admin-artisan-table {
+    min-width: 400px;
+  }
+  
+  .admin-artisan-title {
+    font-size: 18px;
+  }
+  
+  .admin-artisan-title::after {
+    height: 2px;
+    width: 40px;
+  }
+  
+  .admin-artisan-table th {
+    padding: 8px;
+    font-size: 12px;
+  }
+  
+  .admin-artisan-table td {
+    padding: 8px;
+    font-size: 12px;
+  }
+  
+  .admin-artisan-avatar {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+}
+
+/* Handle landscape orientation */
+@media screen and (max-width: 992px) and (orientation: landscape) {
+  .sidebar {
+    max-height: 50px;
+  }
+  
+  .admin-stats {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .admin-stat-card {
+    flex: 0 0 auto;
+  }
+}
+
+/* Add JavaScript toggler for sidebar
+   Add this to your component: */
+/*
+  // Add this function to your component
+  const toggleSidebar = () => {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.toggle('expanded');
+  }
+  
+  // Add this button inside your sidebar
+  <button className="sidebar-toggle" onClick={toggleSidebar}>
+    <svg width="18" height="12" viewBox="0 0 18 12">
+      <path fill="#fff" d="M0 0h18v2H0zm0 5h18v2H0zm0 5h18v2H0z" />
+    </svg>
+  </button>
+*/

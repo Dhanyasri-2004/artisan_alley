@@ -327,30 +327,213 @@
   color: #e91e63;
 }
 
-/* RESPONSIVE DESIGN */
-@media (max-width: 768px) {
+/* Mobile Responsiveness for Navbar */
+@media screen and (max-width: 768px) {
+  /* Main container adjustments */
   .nav-containerrr {
+    padding: 8px 12px;
     flex-direction: column;
-    align-items: center;
-    padding: 12px 15px;
+    height: auto;
   }
 
+  /* Logo and brand section */
+  .nav-left {
+    width: 100%;
+    justify-content: left;
+    margin-bottom: 10px;
+  }
+
+  .nav-brand {
+    font-size: 18px;
+    margin-left: 0px;
+  }
+
+  /* Search bar adjustments */
   .nav-search {
     width: 100%;
-    max-width: 300px;
-    margin: 10px 0;
+    max-width: 100%;
+    margin: 0px 0;
+    order: 0;
+    position: relative; /* Ensure position is relative for proper dropdown positioning */
+  }
+
+  .nav-search-wrapper {
+    padding: 2px 12px;
+  }
+
+  .nav-search-input {
+    padding: 6px 8px;
+    font-size: 13px;
+  }
+
+  /* Navigation links */
+  .nav-right {
+    width: 100%;
+    justify-content: space-around;
+    padding: 0;
+    margin-top: 8px;
+  }
+
+  .nav-link {
+    margin: 2px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  /* Icons sizing and spacing */
+  .nav-cart-icon,
+  .nav-profile-iconnn {
+    font-size: 18px;
+    margin-right: 0;
+  }
+
+  .nav-profile-iconnn {
+    margin-right: 3px;
+  }
+  .nav-profile {
+    position: relative !important;
+    margin-left: 25px;
+    margin-right: 10px;
+}
+  /* Dropdown positioning */
+  .nav-dropdownnn {
+    top: 35px !important;
+    right: -50px !important;
+    width: 120px !important;
+  }
+
+  .nav-dropdown-itemmm {
+    padding: 10px !important;
+    font-size: 13px !important;
+  }
+
+  /* Category dropdown adjustments */
+  .nav-category-dropdown {
+    right: 0;
+    left: auto;
+    min-width: 150px;
+  }
+
+  .category-toggle-btn {
+    font-size: 14px;
+    padding: 1px 4px;
+  }
+  
+  .nav-category-item {
+    padding: 8px 15px;
+    font-size: 13px;
+  }
+
+  /* Search results dropdown - Ensure it appears below search bar */
+  .nav-search-results {
+    top: calc(100% + 5px); /* Keep it below the search bar */
+    max-height: 300px;
+  }
+
+  .nav-search-result-link {
+    padding: 10px 15px;
+  }
+
+  .product-name {
+    font-size: 14px;
+  }
+
+  .product-category {
+    font-size: 11px;
+  }
+
+  .product-price {
+    font-size: 13px;
+  }
+}
+
+/* Extra small devices (phones, 576px and down) */
+@media screen and (max-width: 576px) {
+  /* Compact header for very small screens */
+  .nav-containerrr {
+    padding: 6px 10px;
+  }
+
+  /* Smaller logo */
+  .nav-logo {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* Reorganized navigation for better mobile experience */
+  .nav-right {
+
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .nav-link {
+    font-size: 13px;
+  }
+
+  /* Search bar positioning - Keep as relative for proper dropdown */
+  .nav-search {
+    position: relative; /* Changed from sticky to relative */
+    background-color: white;
+    padding: 8px;
+    z-index: 999;
+    margin-top: 0px;
+  }
+
+  /* Search results should appear below search bar */
+  .nav-search-results {
+    top: 100%; /* Always place below search bar */
+    bottom: auto; /* Remove bottom positioning */
+    max-height: 250px;
+  }
+
+  /* Smaller and more touch-friendly elements */
+  .nav-search-result-link {
+    padding: 12px;
+  }
+
+  .nav-category-item {
+    padding: 12px;
+  }
+
+  /* Ensure dropdowns are fully visible */
+  .nav-dropdownnn {
+    right: -30px !important;
+  }
+}
+
+/* For very small devices */
+@media screen and (max-width: 375px) {
+  .nav-containerrr {
+    padding: 5px 8px;
+  }
+
+  .nav-brand {
+    font-size: 16px;
   }
 
   .nav-right {
-    margin-top: 10px;
+    gap: 3px;
   }
 
-  .nav-link,
-  .nav-icon {
-    margin-left: 15px;
+  /* Make icons more prominent for small touch targets */
+  .nav-cart-icon,
+  .nav-profile-iconnn {
+    font-size: 20px;
   }
 
-  .nav-dropdown {
-    top: 40px;
+  /* Simplified navigation with only essential items visible */
+  .nav-link:not(:nth-child(1)):not(:nth-child(2)) {
+    display: none;
+  }
+
+  /* Ensure search results still appear below search bar */
+  .nav-search {
+    position: relative;
+  }
+  
+  .nav-search-results {
+    top: 100%;
+    bottom: auto;
   }
 }

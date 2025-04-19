@@ -6,7 +6,7 @@
 }
 
 .sidebar-container {
-  width: 250px;
+
   background-color: #ffffff;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   animation: slideInLeft 0.5s ease-out;
@@ -451,4 +451,258 @@
 @keyframes skeletonLoading {
   0% { background-position: 200% 0; }
   100% { background-position: -200% 0; }
+}
+/* Mobile Responsiveness */
+@media screen and (max-width: 1024px) {
+  .products-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .button-group {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .action-button {
+    padding: 10px 16px;
+    font-size: 12px;
+}
+}
+
+/* Tablet Styling */
+@media screen and (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .sidebar-container {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .products-main {
+    padding: 1.5rem;
+  }
+  
+  .products-title {
+    font-size: 1.75rem;
+  }
+  
+  .products-table th,
+  .products-table td {
+    padding: 12px 10px;
+    font-size: 14px;
+  }
+  
+  .status-badge {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+}
+
+/* Mobile Styling */
+@media screen and (max-width: 640px) {
+  .products-main {
+    padding: 1rem;
+    margin-top: 10px;
+  }
+  
+  .products-header {
+    margin-bottom: 1.5rem;
+  }
+  
+  .products-title {
+    font-size: 1.5rem;
+  }
+  
+  .button-group {
+    width: 90%;
+    gap: 10px;
+  }
+  
+  .action-button {
+    width: 100%;
+    justify-content: center;
+    padding: 1px 0;
+}
+  
+  .products-table-wrapper {
+    border-radius: 6px;
+  }
+  
+  /* Table Responsive Treatment */
+  .products-table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .products-table {
+    min-width: 650px; /* Ensures table doesn't shrink too much */
+  }
+  
+  .products-table th,
+  .products-table td {
+    padding: 10px 8px;
+    font-size: 13px;
+  }
+  
+  .product-description {
+    max-width: 150px;
+  }
+  
+  /* Optimized Loading States for Mobile */
+  .loading-container, 
+  .error-container {
+    padding: 2rem 1rem;
+  }
+  
+  .loading-spinner {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* Small Mobile Styling */
+@media screen and (max-width: 375px) {
+  .products-title {
+    font-size: 1.25rem;
+  }
+  
+  .products-table th,
+  .products-table td {
+    padding: 8px 6px;
+    font-size: 12px;
+  }
+  
+  .product-description {
+    max-width: 120px;
+  }
+  
+  .status-badge {
+    padding: 3px 6px;
+    font-size: 11px;
+  }
+  
+  /* Improve table scrolling experience on very small screens */
+  .products-table {
+    min-width: 500px;
+  }
+}
+
+/* Handle landscape orientation */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .dashboard-container {
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  .sidebar-container {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+  }
+  
+  .products-main {
+    padding: 1rem;
+  }
+  
+  .products-header {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Utility class to hide elements on mobile */
+@media screen and (max-width: 640px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+  
+  /* Add mobile-friendly compact view option */
+  .compact-view .product-description {
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* Mobile-friendly cards alternative for small screens */
+  .mobile-card-view {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+  
+  .mobile-card-view .product-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    position: relative;
+  }
+  
+  .mobile-card-view .product-name {
+    font-size: 16px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .mobile-card-view .product-description {
+    margin-bottom: 0.75rem;
+    color: #4b5563;
+    max-width: 100%;
+  }
+  
+  .mobile-card-view .product-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+  }
+}
+
+/* Add smooth scrolling for mobile experience */
+@media screen and (max-width: 768px) {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Pull-to-refresh visual indicator */
+  .products-main::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 0;
+    right: 0;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 10px;
+    color: #6b7280;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .products-main.refreshing::before {
+    opacity: 1;
+  }
+  
+  /* Better touch target sizes for mobile */
+  .action-button, .retry-button {
+    min-height: 34px;
+}
+}
+
+/* Fix for iOS Safari bottom toolbar */
+@supports (-webkit-touch-callout: none) {
+  .products-main {
+    padding-bottom: 4rem;
+  }
 }

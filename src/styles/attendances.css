@@ -415,3 +415,313 @@ html {
   transform: translateY(-20px);
   transition: opacity 300ms, transform 300ms;
 }
+/* Mobile Responsiveness for Attendance Page */
+
+/* Base Mobile Media Query */
+@media only screen and (max-width: 767px) {
+  /* Layout adjustments */
+  .page-wrapper {
+    flex-direction: column;
+    height: auto;
+    overflow-x: hidden;
+  }
+
+  /* Sidebar transforms into a top navigation bar */
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    border-right: none;
+    border-bottom: 2px solid #a277ba;
+    max-height: 60px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .sidebar.expanded {
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+
+  /* Hamburger menu for sidebar */
+  .sidebar-toggle {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 1001;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #a277ba;
+  }
+
+  /* Main content adjustments */
+  .attendance-content {
+    margin-left: 0;
+    width: 100%;
+    padding: 1rem;
+    height: auto;
+    overflow-y: visible;
+  }
+
+  /* Headings */
+  .main-heading {
+    font-size: 20px;
+    margin-top: 1rem;
+  }
+
+  .history-heading {
+    font-size: 18px;
+  }
+
+  /* Table adjustments */
+  .attendance-table {
+    width: 100%;
+    font-size: 14px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 5px rgba(162, 119, 186, 0.15);
+  }
+
+  .attendance-table th {
+    padding: 10px 8px;
+    font-size: 14px;
+  }
+
+  .attendance-table td {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  /* Switch size adjustment */
+  .switch {
+    width: 50px;
+    height: 26px;
+  }
+
+  .slider::before {
+    height: 18px;
+    width: 18px;
+  }
+
+  input:checked + .slider::before {
+    transform: translateX(22px);
+  }
+
+  /* Button adjustments */
+  .submit-btn {
+    width: 100%;
+    max-width: 280px;
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+
+  /* Status message */
+  .status-msg {
+    font-size: 14px;
+    padding: 8px;
+    margin-bottom: 20px;
+  }
+}
+
+/* Extra Small Devices (iPhone SE, smaller phones) */
+@media only screen and (max-width: 375px) {
+  .attendance-table th,
+  .attendance-table td {
+    padding: 6px 4px;
+    font-size: 13px;
+  }
+
+  .main-heading {
+    font-size: 18px;
+  }
+
+  .history-heading {
+    font-size: 16px;
+  }
+
+  /* Make switches even smaller */
+  .switch {
+    width: 44px;
+    height: 22px;
+  }
+
+  .slider::before {
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    bottom: 3px;
+  }
+
+  input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+}
+
+/* Portrait mode optimizations */
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  /* Further optimizations for portrait mode */
+  .attendance-table {
+    margin-left: -10px;
+    margin-right: -10px;
+    width: calc(100% + 20px);
+  }
+}
+
+/* Landscape mode optimizations */
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  .sidebar {
+    max-height: 50px;
+  }
+  
+  .main-heading, .history-heading {
+    margin-bottom: 1rem;
+  }
+  
+  .attendance-table {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Add a fixed bottom navigation bar for mobile (app-like experience) */
+@media only screen and (max-width: 767px) {
+  .mobile-bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    box-shadow: 0 -2px 10px rgba(162, 119, 186, 0.2);
+    justify-content: space-around;
+    align-items: center;
+    z-index: 999;
+    border-top: 1px solid #f0e6f5;
+  }
+
+  .mobile-bottom-nav .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    width: 25%;
+    height: 100%;
+    text-decoration: none;
+    font-size: 12px;
+  }
+
+  .mobile-bottom-nav .nav-item.active {
+    color: #a277ba;
+  }
+
+  .mobile-bottom-nav .nav-icon {
+    font-size: 22px;
+    margin-bottom: 4px;
+  }
+
+  /* Add padding to the bottom of content to prevent overlap with bottom nav */
+  .attendance-content {
+    padding-bottom: 70px;
+  }
+}
+
+/* Pull-to-refresh animation (app-like feature) */
+@media only screen and (max-width: 767px) {
+  .pull-to-refresh {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a277ba;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .pull-to-refresh.visible {
+    opacity: 1;
+  }
+
+  .pull-indicator {
+    width: 30px;
+    height: 30px;
+    border: 2px solid rgba(162, 119, 186, 0.3);
+    border-top-color: #a277ba;
+    border-radius: 50%;
+    margin-right: 10px;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+/* Table responsiveness for very small screens */
+@media only screen and (max-width: 320px) {
+  /* Hide ID column on very small screens */
+  .attendance-table th:first-child,
+  .attendance-table td:first-child {
+    display: none;
+  }
+  
+  .attendance-table th, 
+  .attendance-table td {
+    padding: 5px 3px;
+    font-size: 12px;
+  }
+}
+
+/* Add touch-friendly improvements */
+@media only screen and (max-width: 767px) {
+  /* Increase touch targets */
+  .switch {
+    margin: 5px 0;
+  }
+  
+  .submit-btn {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 44px; /* Standard minimum touch target height */
+  }
+  
+  /* Add overscroll behavior for smoother scrolling */
+  .attendance-content {
+    -webkit-overflow-scrolling: touch; /* For iOS */
+    overscroll-behavior: contain;
+  }
+  
+  /* Add tap highlight color */
+  tr, .submit-btn, .switch {
+    -webkit-tap-highlight-color: rgba(162, 119, 186, 0.1);
+  }
+}
+
+/* App-like transitions */
+@media only screen and (max-width: 767px) {
+  .page-transition-enter {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  
+  .page-transition-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 300ms, transform 300ms;
+  }
+  
+  .page-transition-exit {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .page-transition-exit-active {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 300ms, transform 300ms;
+  }
+}

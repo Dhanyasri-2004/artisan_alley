@@ -214,7 +214,7 @@ const ProductsPage1 = () => {
         )}
       </div>
       <div className="contact-footer">
-        <p>© 2025 Artisan Alley. All Rights Reserved.</p>
+        <p>© 2025 Indiart. All Rights Reserved.</p>
       </div>
     </div>
   );
